@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>GT (Golden Trust) Almirah · Bahraich since 1991</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FBF6EC;--blush:#D8BC86;--rose:#8A6742;--sage:#EDE1CB;--sky:#C9B391;--night:#3A2C23;--bg:#FBF6EC;--ink:#3A2C23;--card:#FFFDF8;--mut:#6B5A4C;--gold:#B8955A;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font:400 17px/1.6 'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+body[data-p=home]{background:radial-gradient(ellipse at 68% 42%,#fffaf1,#F4EAD7 58%,#E6D4B3) fixed}
+h1,h2,h3,.f{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.05}
+a{color:inherit}img{max-width:100%}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:none;transition:opacity 0.3s ease;pointer-events:none}
+body[data-p=home] #gl{display:block}
+header{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:calc(12px + env(safe-area-inset-top,0px)) 5vw 12px;background:rgba(251,246,236,.86);backdrop-filter:blur(12px);color:var(--night);border-bottom:1px solid rgba(184,149,90,.4)}
+#logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;line-height:1.15}
+#logo b{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--night);color:var(--blush)}
+#logo small{display:block;font-weight:400;font-size:12px;color:var(--rose)}
+nav{display:flex;gap:clamp(10px,2.4vw,28px);font-size:15px}nav a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}nav a[aria-current]{border-color:var(--blush)}
+.btn{display:inline-block;padding:.85em 1.5em;border-radius:99px;background:var(--blush);color:var(--night);font:700 16px 'DM Sans',sans-serif;text-decoration:none;border:0;cursor:pointer}
+.btn.g{background:none;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}.btn.d{background:var(--night);color:var(--cream)}
+#hero{height:270vh;position:relative;z-index:1}
+.stick{position:sticky;top:0;height:100vh;display:flex;align-items:flex-end;padding:0 5vw 12vh;color:var(--night)}
+.hl{max-width:36rem;padding-top:40px}.hl h1{font-size:clamp(3rem,7.6vw,6.4rem);font-weight:600;margin-bottom:18px;line-height:1.02}.hl p{color:var(--mut);margin-bottom:24px;max-width:28rem}.ra{display:flex;gap:12px;flex-wrap:wrap}
+.hm{position:absolute;left:5vw;right:5vw;bottom:5vh;font-size:clamp(1.5rem,3.4vw,2.6rem);font-weight:600;opacity:0;text-align:center}
+.sec{position:relative;z-index:1;background:var(--bg);padding:clamp(56px,9vw,110px) 5vw}.pg{padding-top:140px;min-height:100vh}
+.sec h2{font-size:clamp(1.9rem,4vw,3rem);margin-bottom:28px;max-width:30rem}
+
+/* Dark Quote Section (.dk & .rvt) */
+.sec.dk{background:var(--night);color:var(--cream);text-align:center;padding:clamp(60px,10vw,120px) 5vw}
+.rvt{font-size:clamp(1.8rem,4.5vw,3.6rem);line-height:1.25;max-width:54rem;margin:0 auto;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic}
+.rvt span{transition:opacity .2s ease;display:inline-block;margin:0 .12em}
+
+/* Three Steps Layout (.steps) */
+.steps{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:34px;margin-top:20px}
+.ln{position:absolute;top:22px;left:0;right:0;height:1px;background:var(--gold);transform-origin:left;z-index:0}
+.steps>div:not(.ln){position:relative;z-index:1}
+.steps b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--bg);border:1.5px solid var(--gold);color:var(--gold);font:600 1.4rem 'Cormorant Garamond',serif;margin-bottom:14px}
+.steps h3{font-size:1.7rem;margin-bottom:6px;color:var(--night)}
+.steps p{color:var(--mut);font-size:15px;line-height:1.5}
+
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:34px}.three h3{font-size:1.4rem;margin-bottom:6px;color:var(--rose)}.three p,.mut{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(235px,100%),1fr));gap:28px;padding-top:12px}
+.card{background:#fff;border-radius:2px;overflow:visible;cursor:pointer;border:1px solid rgba(184,149,90,0.3);padding:12px 12px 16px;position:relative;box-shadow:0 10px 24px rgba(58,44,35,0.12),0 2px 6px rgba(58,44,35,0.08);transition:transform 0.35s cubic-bezier(0.25,1,0.5,1),box-shadow 0.35s ease}
+.card:nth-child(odd){transform:rotate(-1.5deg)}
+.card:nth-child(even){transform:rotate(1.2deg)}
+.card:nth-child(3n){transform:rotate(-0.8deg)}
+.card::before{content:"";position:absolute;top:-12px;left:50%;width:64px;height:20px;margin-left:-32px;background:rgba(216,188,134,0.7);box-shadow:0 1px 3px rgba(0,0,0,0.1);transform:rotate(-2deg);z-index:10;pointer-events:none}
+.card:hover{transform:translateY(-8px) scale(1.02) rotate(0deg) !important;box-shadow:0 18px 36px rgba(58,44,35,0.2),0 4px 10px rgba(58,44,35,0.1);z-index:5}
+.v{aspect-ratio:4/5;display:grid;place-items:center;border-radius:2px;overflow:hidden;margin-bottom:12px}.v img{width:100%;height:100%;object-fit:cover}.cb{padding:4px 6px 2px}.cb h3{font-size:1.25rem;margin:4px 0 6px}.tag{font-size:13px;color:var(--rose);font-weight:700}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}.chip{padding:.5em 1.1em;border-radius:99px;border:1.5px solid var(--ink);background:none;color:var(--ink);font:500 15px 'DM Sans';cursor:pointer}.chip[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.band{background:var(--sage);color:var(--night)}.band .mut{color:#5a4a3c}
+footer{position:relative;z-index:1;background:var(--night);color:var(--sky);padding:34px 5vw calc(34px + env(safe-area-inset-bottom,0px));font-size:15px}
+.ov{position:fixed;inset:0;z-index:60;background:rgba(24,33,42,.65);display:grid;place-items:center;padding:16px}.md{background:var(--bg);color:var(--ink);border-radius:22px;max-width:760px;width:100%;max-height:92vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr}
+.md .v{aspect-ratio:auto;min-height:260px}.mb{padding:26px;display:flex;flex-direction:column;gap:12px}.mb h2{font-size:1.8rem}
+@media(max-width:640px){.md{grid-template-columns:1fr}.md .v{min-height:200px;aspect-ratio:16/10}nav{font-size:13px}#logo small{display:none}.ln{display:none}}
+input,select,textarea{width:100%;padding:.7em .9em;border-radius:12px;border:1.5px solid color-mix(in srgb,var(--ink) 30%,transparent);background:var(--card);color:var(--ink);font:inherit}
+.fl{display:grid;gap:12px;max-width:520px;margin-bottom:36px}.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid color-mix(in srgb,var(--ink) 14%,transparent)}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--night);color:var(--cream);padding:.8em 1.3em;border-radius:99px;z-index:80;display:none}
+.btn{border-radius:2px;letter-spacing:.05em}.chip{border-radius:2px}.md{border-radius:6px}
+.sec h2{font-size:clamp(2.4rem,5.4vw,4rem)}.cb h3{font-size:1.55rem}.three h3{font-size:1.8rem}
+.mq{padding:22px 0;overflow:hidden;border-block:1px solid rgba(184,149,90,.45)}.mt{white-space:nowrap;width:max-content;font-size:clamp(2.2rem,6vw,4.6rem);color:var(--gold);font-style:italic}
+.stats h3{font-size:clamp(2.6rem,6vw,4.6rem);color:var(--gold)}
+.hs{height:auto;display:block;overflow:visible;padding:clamp(56px,9vw,110px) 5vw}.hh{padding:0 0 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}.hr{width:auto;overflow-x:auto;scroll-snap-type:x mandatory;padding:18px 6px 28px;margin:0 -6px;scrollbar-width:none;display:flex;gap:24px}.hr::-webkit-scrollbar{display:none}.hr .card{flex:0 0 min(72vw,300px);scroll-snap-align:start}.hh .chip{font-size:22px;line-height:1;padding:.4em .85em;cursor:pointer}
+.cb h3{font-style:italic}
+.md .v{margin:26px;border:12px solid #fff;border-bottom-width:44px;box-shadow:0 12px 28px rgba(58,44,35,.22);transform:rotate(-2deg)}
+#wb{position:fixed;right:max(18px,3vw);bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:10px;padding:.8em 1.3em;border-radius:2px;background:var(--night);color:var(--cream);text-decoration:none;font:500 15px 'DM Sans',sans-serif;letter-spacing:.05em;border:1px solid var(--gold);box-shadow:0 10px 30px rgba(58,44,35,.28);transition:background .25s,color .25s}#wb svg{color:var(--blush)}#wb:hover{background:var(--gold);color:var(--night)}#wb:hover svg{color:var(--night)}
+footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}
+
+/* mobile cutoff fixes */
+html,body{max-width:100%;overflow-x:hidden}
+main,.sec,.grid,.three,.steps,.chips{min-width:0;max-width:100%}
+.card,.grid>*{min-width:0;max-width:100%}
+.v img,.v svg{max-width:100%}
+header{padding-left:max(4vw,12px);padding-right:max(4vw,12px)}
+#logo{min-width:0;flex:0 1 auto}#logo span{min-width:0}
+nav{flex:0 0 auto}
+@media(max-width:480px){header{gap:8px}#logo b{width:34px;height:34px}#logo{font-size:14px;gap:8px}nav{font-size:12px;gap:9px}}
+</style></head><body data-p="home">
+<canvas id="gl" aria-hidden="true"></canvas>
+<header><a id="logo" href="#/"><b><svg viewBox="0 0 160 160" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M42 38h46c18 0 32 14 32 32s-14 32-32 32H66v26H42V38z" fill="url(#ga)"/><path d="M66 66h54v24H66V66z" fill="url(#gb)"/><defs><linearGradient id="ga" x1="42" y1="38" x2="120" y2="128" gradientUnits="userSpaceOnUse"><stop stop-color="#E8CF9A"/><stop offset="1" stop-color="#8A6742"/></linearGradient><linearGradient id="gb" x1="66" y1="66" x2="120" y2="90" gradientUnits="userSpaceOnUse"><stop stop-color="#F4EBD7"/><stop offset="1" stop-color="#B8955A"/></linearGradient></defs></svg></b><span>Golden Trust Almirah<small>Since 1991 · Bahraich</small></span></a>
+<nav><a href="#/">Home</a><a href="#/products">Products</a><a href="#/about">About</a><a href="#/contact">Contact</a></nav></header>
+<main id="app"></main>
+<footer>© GT (Golden Trust) Almirah · Nazirpura, Lucknow Road, Bahraich · <a href="https://wa.me/919792829182" target="_blank" rel="noopener">9792829182</a> · <a href="https://wa.me/919628557982" target="_blank" rel="noopener">9628557982</a></footer>
+<a id="wb" href="https://wa.me/919792829182?text=Hello%20GT%20(Golden%20Trust)%20Almirah%2C%20I%20would%20like%20to%20book%20an%20order." target="_blank" rel="noopener" aria-label="Book an order on WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v12H10l-6 4V4Z"/><path d="M8 9h8M8 12h5" stroke-linecap="round"/></svg><span>Book on WhatsApp</span></a>
+<div id="toast" role="status"></div>
+<script id="gt-data" type="application/json">{"a": {"u": "salman", "p": "golden"}, "p": [{"id": "s1", "name": "Two-Door Iron Almirah", "cat": "Almirah", "price": "", "desc": "Heavy-gauge iron body with two doors, three shelves and a hanging rail. Powder-coated finish.", "img": ""}, {"id": "s2", "name": "Three-Door Wardrobe Almirah", "cat": "Almirah", "price": "", "desc": "Roomy family wardrobe with a full-height hanging section and a lockable top box.", "img": ""}, {"id": "s3", "name": "Locker Almirah", "cat": "Locker", "price": "", "desc": "Almirah with a bolted inner safe compartment for documents, jewellery and cash.", "img": ""}, {"id": "s4", "name": "Office File Cupboard", "cat": "Cupboard", "price": "", "desc": "Sturdy iron cupboard with adjustable shelves for files and records.", "img": ""}, {"id": "s5", "name": "Single-Door Almirah", "cat": "Almirah", "price": "", "desc": "Compact almirah that fits bedrooms, hostels and small shops.", "img": ""}, {"id": "s6", "name": "Kitchen Storage Cabinet", "cat": "Cupboard", "price": "", "desc": "Ventilated iron cabinet for utensils and dry goods.", "img": ""}]}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+const BASE='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+const $=s=>document.querySelector(s),WA=['919792829182','919628557982'],RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const E=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
+let D={a:null,p:[]},P=[];try{D=JSON.parse($('#gt-data').textContent);P=D.p||[]}catch(e){}
+let F='All';const TINT=['#EFE3CC','#E8D5B5','#F4EBDD','#E2CFAE'],COL=['#3A2C23','#8A6742','#B8955A','#5E4636'];
+const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(t._t);t._t=setTimeout(()=>t.style.display='none',3600)};
+const art=i=>{const c=COL[i%4];return `<svg viewBox="0 0 120 170" width="62%" aria-hidden="true"><ellipse cx="60" cy="160" rx="46" ry="5" fill="#3A2C23" opacity=".18"/><rect x="14" y="8" width="92" height="136" rx="5" fill="${c}"/><rect x="20" y="14" width="39" height="124" rx="2" fill="none" stroke="#FBF6EC" stroke-opacity=".55"/><rect x="61" y="14" width="39" height="124" rx="2" fill="none" stroke="#FBF6EC" stroke-opacity=".55"/><path d="M55 66v26M65 66v26" stroke="#E8CF9A" stroke-width="3" stroke-linecap="round"/><rect x="22" y="144" width="8" height="8" fill="${c}"/><rect x="90" y="144" width="8" height="8" fill="${c}"/></svg>`};
+const T=p=>E(p.co?p.co+' · '+p.cat:p.cat),vis=(p,i)=>p.img?`<img src="${p.img}" alt="${E(p.name)}">`:art(i);
+const card=(p,i)=>`<article class="card" tabindex="0" data-id="${E(p.id)}" aria-label="${E(p.name)}"><div class="v" style="background:${TINT[i%4]}">${vis(p,i)}</div><div class="cb"><span class="tag">${T(p)}</span><h3>${E(p.name)}</h3><span class="mut">${E(p.price||'Price on request')}</span></div></article>`;
+const ownerCard=(name,role,desc,i)=>`<article class="card" tabindex="0"><div class="v" style="background:${TINT[i%4]}"><svg viewBox="0 0 120 120" width="54%" aria-hidden="true"><circle cx="60" cy="45" r="22" fill="#8A6742" opacity=".25"/><path d="M20 105c0-22 18-38 40-38s40 16 40 38" fill="#8A6742" opacity=".25"/></svg></div><div class="cb"><span class="tag">${role}</span><h3>${name}</h3><span class="mut">${desc}</span></div></article>`;
+const pages={
+home:()=>`<section id="hero"><div class="stick"><div class="hl"><h1>Iron almirahs built to outlast the house.</h1><p>Strong, smooth-opening storage from Bahraich’s trusted almirah makers, since 1991.</p><div class="ra"><a class="btn" href="#/products">See our products</a><a class="btn g" href="https://wa.me/${WA[0]}" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div><p class="hm f">Open the door to 35 years of trust.</p></div></section>
+<div class="sec mq" aria-hidden="true"><div class="mt f">Iron almirahs ✦ Lockers ✦ Cupboards ✦ Since 1991 ✦ Iron almirahs ✦ Lockers ✦ Cupboards ✦ Since 1991 ✦</div></div><section class="sec"><div class="three stats"><div><h3><span class="cn" data-n="35">35</span> years</h3><p>Serving Bahraich since 1991.</p></div><div><h3><span class="cn" data-n="${P.length}">${P.length}</span> pieces</h3><p>In the collection today.</p></div><div><h3><span class="cn" data-n="1">1</span> message</h3><p>Is all it takes to place an order.</p></div></div></section><section class="sec" style="padding-top:0"><h2>Storage you buy once.</h2><div class="three"><div><h3>Heavy-gauge iron</h3><p>Thick sheets, welded frames and a powder-coated finish that resists rust and dents.</p></div><div><h3>Made in Bahraich</h3><p>Built and sold from our own premises on Lucknow Road, so you deal with the makers directly.</p></div><div><h3>Order in one message</h3><p>Pick an item, tap send, and we reply on WhatsApp with price and delivery.</p></div></div></section>
+<section class="sec hs"><div class="hh"><h2>The collection</h2><div class="ra"><button class="chip" data-n="-1" aria-label="Previous products">‹</button><button class="chip" data-n="1" aria-label="Next products">›</button><a class="btn d" href="#/products">View all</a></div></div><div class="hr">${P.slice(0,8).map(card).join('')}</div></section><section class="sec dk"><p class="rvt f">A good almirah is more than storage. It guards what a family keeps for generations, so we build every one to be trusted.</p></section>
+<section class="sec"><h2>Order in three steps.</h2><div class="steps"><div class="ln"></div><div><b>1</b><h3>Pick your almirah</h3><p>Browse the collection and tap any piece to see it larger.</p></div><div><b>2</b><h3>Send one message</h3><p>WhatsApp opens with the item and quantity already written.</p></div><div><b>3</b><h3>We confirm</h3><p>We reply with price, availability and delivery details.</p></div></div></section><section class="sec band"><h2>Come see the almirahs in person.</h2><p class="mut" style="margin-bottom:22px;max-width:30rem">Nazirpura, Lucknow Road, Bahraich. Call before you visit and we will keep your pick ready.</p><a class="btn d" href="#/contact">Get directions &amp; phone numbers</a></section>`,
+products:()=>{const cats=['All',...new Set(P.map(p=>p.cat))],L=P.filter(p=>F==='All'||p.cat===F);return `<section class="sec pg"><h2>Our products</h2><div class="chips">${cats.map(c=>`<button class="chip" data-f="${E(c)}" aria-pressed="${c===F}">${E(c)}</button>`).join('')}</div>${L.length?`<div class="grid">${L.map(p=>card(p,P.indexOf(p))).join('')}</div>`:'<p class="mut">No products here yet. Check back soon or message us on WhatsApp.</p>'}</section>`},
+about:()=>`<section class="sec pg"><h2>Three decades of steel, one promise.</h2><div class="three"><div><h3>Since 1991</h3><p>GT (Golden Trust) Almirah started in Bahraich with one goal: honest iron furniture at a fair price.</p></div><div><h3>Built to last</h3><p>We use heavy-gauge iron and strong joints, so doors stay aligned and locks keep working for years.</p></div><div><h3>Trusted by families &amp; offices</h3><p>From home wardrobes to office cupboards and lockers, we make storage that keeps valuables safe.</p></div></div></section>
+<section class="sec"><h2>Meet the makers</h2><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),320px));margin-bottom:40px">${ownerCard('Founder & Master Craftsman','Senior Artisan','Guiding the workshop since 1991 with precision steel crafting.',0)}${ownerCard('Salman Ansari','Workshop & Operations Lead','Managing workshop production and customer service.',1)}</div></section>
+<section class="sec dk"><p class="rvt f">We have never chased the cheapest almirah. We build the one that is still closing smoothly for many years to come.</p></section>
+<section class="sec"><h2>Visit our workshop</h2><p class="mut" style="margin-bottom:20px">Nazirpura, Lucknow Road, Bahraich.</p><div style="border-radius:6px;overflow:hidden;border:1px solid rgba(184,149,90,0.4)"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.830843155732!2d81.58514957421283!3d27.5677598316364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3999a95b84be8b05%3A0x2f0c8ccff6068501!2sGuddu%20Traders!5e0!3m2!1sen!2sin!4v1792335074266!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></section>`,
+contact:()=>`<section class="sec pg"><h2>Talk to us.</h2><div class="three"><div><h3>Visit</h3><p>GT (Golden Trust) Almirah<br>Nazirpura, Lucknow Road<br>Bahraich</p></div><div><h3>Call</h3><p><a href="tel:+919792829182">9792829182</a><br><a href="tel:+919628557982">9628557982</a></p></div><div><h3>WhatsApp</h3><p style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn d" href="https://wa.me/${WA[0]}" target="_blank" rel="noopener">9792829182</a><a class="btn g" href="https://wa.me/${WA[1]}" target="_blank" rel="noopener">9628557982</a></p></div></div><div style="margin-top:40px"><h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;margin-bottom:16px">Find us on map</h3><div style="border-radius:6px;overflow:hidden;border:1px solid rgba(184,149,90,0.4)"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.830843155732!2d81.58514957421283!3d27.5677598316364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3999a95b84be8b05%3A0x2f0c8ccff6068501!2sGuddu%20Traders!5e0!3m2!1sen!2sin!4v1792335074266!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div></section>`,
+admin:()=>!AU?`<section class="sec pg"><h2>Owner sign-in</h2><div class="fl"><input id="lu" placeholder="ID" autocomplete="username"><input id="lp" type="password" placeholder="Password" autocomplete="current-password"><button class="btn d" id="lg">Sign in</button></div></section>`:`<section class="sec pg"><h2>Manage products</h2><p class="mut" style="margin-bottom:22px">Changes go live for every visitor as soon as you publish. Only the shop owner’s account can publish.</p><div class="fl"><input id="an" placeholder="Product name"><input id="aco" placeholder="Company / brand (optional)"><select id="ac"><option>Almirah</option><option>Cupboard</option><option>Locker</option><option>Other</option></select><input id="ap" placeholder="Price (leave empty for “Price on request”)"><textarea id="ad" rows="3" placeholder="Short description"></textarea><input id="ai" type="file" accept="image/*" aria-label="Product photo"><button class="btn d" id="add">Add product &amp; publish</button></div><h3 style="margin-bottom:8px">Change login</h3><div class="fl"><input id="nu" placeholder="New ID"><input id="np" type="password" placeholder="New password (6+ characters)"><button class="btn d" id="cp">Save new login</button><button class="chip" id="out" style="justify-self:start">Sign out</button></div><h3 style="margin-bottom:8px">Live products (${P.length})</h3>${P.map(p=>`<div class="row"><span>${E(p.name)} <span class="mut">· ${E(p.cat)}</span></span><button class="chip del" data-id="${E(p.id)}">Delete</button></div>`).join('')||'<p class="mut">No products yet. Add your first almirah above.</p>'}</section>`
+};
+function doc(l,a){const j=JSON.stringify({a:a===undefined?D.a:a,p:l}).replace(/</g,'\\u003c'),aid=BASE.indexOf('id="gt-data"'),s=BASE.indexOf('>',aid)+1,e=BASE.indexOf('<'+'/script>',s);return BASE.slice(0,s)+j+BASE.slice(e)}
+let AU=false;try{AU=sessionStorage.getItem('gtU')==='1'}catch(e){}
+async function save(l,au){let a=null;try{a=window.claude&&await claude.use('artifact')}catch(e){}if(!a)return toast('Open this page from the owner’s account to publish.');try{try{sessionStorage.setItem('gtA','1')}catch(e){}toast('Publishing…');await a.publish(doc(l,au))}catch(e){toast('Could not publish ('+(e.code||e.message)+'). Sign in as the owner.')}}
+const shrink=f=>new Promise(r=>{const fr=new FileReader();fr.onload=()=>{const i=new Image();i.onload=()=>{const k=Math.min(1,720/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=i.width*k;c.height=i.height*k;c.getContext('2d').drawImage(i,0,0,c.width,c.height);r(c.toDataURL('image/jpeg',.72))};i.src=fr.result};fr.readAsDataURL(f)});
+function openQ(id){const p=P.find(x=>x.id===id);if(!p)return;const i=P.indexOf(p),o=document.createElement('div');o.className='ov';
+o.innerHTML=`<div class="md" role="dialog" aria-modal="true" aria-label="${E(p.name)}"><div class="v" style="background:${TINT[i%4]}">${vis(p,i)}</div><div class="mb"><span class="tag">${T(p)}</span><h2>${E(p.name)}</h2><p class="mut">${E(p.desc)}</p><strong>${E(p.price||'Price on request')}</strong><input id="qn" placeholder="Your name" autocomplete="name"><input id="qq" type="number" min="1" value="1" aria-label="Quantity"><a id="wa" class="btn d" target="_blank" rel="noopener" href="https://wa.me/${WA[0]}">Send order query on WhatsApp</a><button class="chip" id="qx">Close</button></div></div>`;
+document.body.append(o);const x=()=>{o.remove();removeEventListener('keydown',k)},k=e=>e.key==='Escape'&&x();addEventListener('keydown',k);
+$('#qx').onclick=x;o.onclick=e=>{if(e.target===o)x()};$('#qx').focus();if(!RM&&window.gsap)gsap.from('.md',{scale:.88,y:36,opacity:0,duration:.55,ease:'back.out(1.5)'});
+$('#wa').onclick=()=>{const m=`Hello GT (Golden Trust) Almirah,\nI would like to order / enquire about:\n*${p.name}* (${p.cat}${p.co?', '+p.co:''})\nQuantity: ${$('#qq').value||1}\nPrice: ${p.price||'please share'}\nName: ${$('#qn').value||'-'}\nPlease confirm availability, price and delivery.`;$('#wa').href=`https://wa.me/${WA[0]}?text=${encodeURIComponent(m)}`}}
+document.addEventListener('click',e=>{const c=e.target.closest('.card');if(c&&c.dataset.id)return openQ(c.dataset.id);const f=e.target.closest('.chip[data-f]');if(f){F=f.dataset.f;go(1)}const nb=e.target.closest('[data-n]');if(nb){const hr=$('.hr');if(hr)hr.scrollBy({left:parseInt(nb.dataset.n)*300,behavior:'smooth'});}const d=e.target.closest('.del');if(d){if(d.dataset.s)return save(P.filter(p=>p.id!==d.dataset.id));d.dataset.s=1;d.textContent='Tap again to delete';setTimeout(()=>{d.dataset.s='';d.textContent='Delete'},3000)}});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.classList.contains('card')&&e.target.dataset.id)openQ(e.target.dataset.id)});
+/* 3D */
+const S={r:.6,k:0,d:0,z:7.5,x:1,X0:0,opacity:1},M={x:0,y:0},m={x:0,y:0};let ren,sc,cam,G,dl,dr,il,pts;
+try{
+ren=new THREE.WebGLRenderer({canvas:$('#gl'),alpha:true,antialias:true});
+ren.setPixelRatio(Math.min(devicePixelRatio,2));
+sc=new THREE.Scene();
+cam=new THREE.PerspectiveCamera(40,1,.1,60);
+G=new THREE.Group();
+sc.add(G);
+
+const mt=(c,m,r)=>new THREE.MeshStandardMaterial({color:c,metalness:m,roughness:r}),
+bx=(w,h,d,mat,x,y,z)=>{const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat);o.position.set(x,y,z);G.add(o);return o},
+steel=mt(0xC9A96E,.92,.3);
+
+bx(1.7,2.7,.05,steel,0,0,-.42);
+bx(.05,2.7,.9,steel,-.825,0,0);
+bx(.05,2.7,.9,steel,.825,0,0);
+bx(1.7,.05,.9,steel,0,1.325,0);
+bx(1.7,.05,.9,steel,0,-1.325,0);
+[-.7,.1,.9].forEach(y=>bx(1.6,.04,.85,mt(0xF3E9D6,.5,.5),0,y,0));
+bx(.04,.04,1.5,mt(0xE8CF9A,.9,.2),0,.65,0).rotation.set(0,Math.PI/2,0);
+
+const ltr=(c,x)=>{
+  const cv=document.createElement('canvas');cv.width=cv.height=256;
+  const cx=cv.getContext('2d'),t=new THREE.CanvasTexture(cv),dw=()=>{
+    cx.clearRect(0,0,256,256);cx.font='700 220px "Cormorant Garamond",Georgia,serif';
+    cx.textAlign='center';cx.textBaseline='middle';cx.fillStyle='#E8CF9A';cx.fillText(c,128,140);t.needsUpdate=true
+  };
+  dw();
+  const o=new THREE.Mesh(new THREE.PlaneGeometry(.72,.72),new THREE.MeshBasicMaterial({map:t,transparent:true}));
+  o.position.set(x,.6,.034);
+  return o
+};
+
+const door=s=>{
+  const p=new THREE.Group();p.position.set(s*.85,0,.45);
+  const d=new THREE.Mesh(new THREE.BoxGeometry(.82,2.6,.06),mt(0x5E4636,.6,.35));
+  d.position.x=-s*.42;
+  const h=new THREE.Mesh(new THREE.BoxGeometry(.05,.55,.06),mt(0xE8CF9A,.95,.15));
+  h.position.set(-s*.76,0,.06);
+  p.add(d,h,ltr(s<0?'G':'T',-s*.42));
+  G.add(p);
+  return p
+};
+
+dl=door(-1);dr=door(1);
+il=new THREE.PointLight(0xFFE2B0,0,5);il.position.set(0,.4,.1);G.add(il);
+sc.add(new THREE.AmbientLight(0xFFF7E6,.55));
+const dir=new THREE.DirectionalLight(0xFFF7E6,1.2);dir.position.set(3,4,5);sc.add(dir);
+const l1=new THREE.PointLight(0xFFD9A0,2.4,14);l1.position.set(-4,1,3);
+const l2=new THREE.PointLight(0xE8CF9A,1.8,14);l2.position.set(4,-2,-2);
+sc.add(l1,l2);
+
+const N=700,pa=new Float32Array(N*3),ca=new Float32Array(N*3),pal=[0xB8955A,0xD8BC86,0x8A6742,0xC9B391].map(c=>new THREE.Color(c));
+for(let i=0;i<N;i++){
+  const r=3.5+Math.random()*7,a=Math.random()*6.283,b=Math.acos(2*Math.random()-1),c=pal[i%4];
+  pa.set([r*Math.sin(b)*Math.cos(a),r*Math.cos(b),r*Math.sin(b)*Math.sin(a)],i*3);
+  ca.set([c.r,c.g,c.b],i*3)
+}
+const g=new THREE.BufferGeometry();
+g.setAttribute('position',new THREE.BufferAttribute(pa,3));
+g.setAttribute('color',new THREE.BufferAttribute(ca,3));
+pts=new THREE.Points(g,new THREE.PointsMaterial({size:.065,vertexColors:true,transparent:true,opacity:.85}));
+sc.add(pts);
+
+const rs=()=>{
+  ren.setSize(innerWidth,innerHeight,false);
+  cam.aspect=innerWidth/innerHeight;
+  cam.updateProjectionMatrix();
+  const w=innerWidth>820;
+  S.X0=w?Math.min(3.2,1.7*cam.aspect):0;
+  G.position.set(0,w?0:0.5,0);
+  G.scale.setScalar(w?1:0.88)
+};
+rs();
+addEventListener('resize',rs);
+addEventListener('pointermove',e=>{M.x=e.clientX/innerWidth*2-1;M.y=e.clientY/innerHeight*2-1});
+
+(function tick(t){
+  requestAnimationFrame(tick);
+  const gl = $('#gl');
+  if(document.body.dataset.p!=='home'){
+    if(gl) gl.style.opacity = '0';
+    return;
+  }
+  if(gl) gl.style.opacity = S.opacity;
+  m.x+=(M.x-m.x)*.05;
+  m.y+=(M.y-m.y)*.05;
+  G.rotation.y=S.r+(RM?0:(1-S.k)*t*.0004+Math.sin(t*.0006)*.12)+m.x*.35;
+  G.rotation.x=m.y*.12;
+  G.position.x=S.x*S.X0;
+  dl.rotation.y=-S.d;
+  dr.rotation.y=S.d;
+  il.intensity=S.d*1.6;
+  cam.position.set(m.x*.4,-m.y*.3,S.z);
+  cam.lookAt(0,0,0);
+  pts.rotation.y=t*.00003+S.r*.25;
+  pts.position.set(-m.x*.3,m.y*.3,0);
+  ren.render(sc,cam)
+})(0);
+}catch(err){console.error("3D Error:", err);}
+
+function hero(){
+  ScrollTrigger.getAll().forEach(t=>t.kill());
+  Object.assign(S,{r:.6,k:0,d:0,z:7.5,x:1,opacity:1});
+  
+  gsap.timeline({scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom bottom',scrub:1}})
+    .to(S,{r:6.283,k:1,z:6.3,ease:'none',duration:1},0)
+    .to(S,{x:0,ease:'power2.inOut',duration:.5},0)
+    .to(S,{d:1.55,ease:'none',duration:.4},.6)
+    .to('.hl',{autoAlpha:0,y:-60,duration:.2},.1)
+    .fromTo('.hm',{autoAlpha:0,y:30},{autoAlpha:1,y:0,duration:.2},.78);
+
+  gsap.to(S, {
+    opacity: 0,
+    ease: 'power1.out',
+    scrollTrigger: {
+      trigger: '.mq',
+      start: 'top 70%',
+      end: 'bottom 30%',
+      scrub: true
+    }
+  });
+
+  if(!RM)gsap.from('.hl>*',{y:44,opacity:0,duration:1.1,stagger:.14,ease:'power3.out'});
+}
+
+function fx(){if(RM){document.querySelectorAll('.cn').forEach(n=>n.textContent=n.dataset.n);return}
+const st=t=>gsap.from(t,{y:44,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:t,start:'top 88%',once:true}});
+if($('.mt'))gsap.to('.mt',{xPercent:-30,ease:'none',scrollTrigger:{trigger:'.mq',start:'top bottom',end:'bottom top',scrub:1}});
+document.querySelectorAll('.cn').forEach(n=>{const o={v:0};n.textContent=0;gsap.to(o,{v:+n.dataset.n,duration:1.6,ease:'power2.out',scrollTrigger:{trigger:n,start:'top 90%',once:true},onUpdate:()=>n.textContent=Math.round(o.v)})});
+document.querySelectorAll('.stats>div').forEach(st);
+document.querySelectorAll('.rvt').forEach(el=>{el.innerHTML=el.textContent.split(' ').map(w=>`<span>${w}</span>`).join(' ');gsap.fromTo(el.children,{opacity:.2},{opacity:1,stagger:.1,ease:'none',scrollTrigger:{trigger:el,start:'top 82%',end:'bottom 55%',scrub:1}})});
+if($('.ln'))gsap.fromTo('.ln',{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:'.steps',start:'top 78%',end:'bottom 62%',scrub:1}});
+document.querySelectorAll('.steps>div:not(.ln)').forEach(st)}
+
+function go(keep){const h=location.hash.replace('#/','').split('?')[0]||'home',p=pages[h]?h:'home';document.body.dataset.p=p;$('#app').innerHTML=pages[p]();
+document.querySelectorAll('nav a').forEach(a=>{const n=a.getAttribute('href').replace('#/','')||'home';n===p?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
+document.title='GT (Golden Trust) Almirah · '+p[0].toUpperCase()+p.slice(1);if(!keep)scrollTo(0,0);
+if(window.ScrollTrigger){gsap.registerPlugin(ScrollTrigger);ScrollTrigger.getAll().forEach(t=>t.kill());if(p==='home')hero();fx()}
+if(p==='admin'&&!AU)$('#lg').onclick=()=>{const u=$('#lu').value.trim(),w=$('#lp').value,c=D.a||{u:'salman',p:'golden'};if(u===c.u&&(w===c.p||(c.h&&w==='golden'))){AU=true;try{sessionStorage.setItem('gtU','1')}catch(e){}go(1)}else toast('Wrong ID or password.')};
+if(p==='admin'&&AU){$('#out').onclick=()=>{AU=false;try{sessionStorage.removeItem('gtU')}catch(e){}go(1)};$('#cp').onclick=async()=>{const u=$('#nu').value.trim(),w=$('#np').value;if(u.length<3||w.length<6)return toast('Use an ID of 3+ and a password of 6+ characters.');save(P,{u,p:w})}}
+if(p==='admin'&&AU)$('#add').onclick=async()=>{const n=$('#an').value.trim();if(!n)return toast('Add a product name first.');const f=$('#ai').files[0];save([{id:Date.now().toString(36),name:n,cat:$('#ac').value,co:$('#aco').value.trim(),price:$('#ap').value.trim(),desc:$('#ad').value.trim(),img:f?await shrink(f):''},...P])}}
+let tp=0,tt;$('#logo').addEventListener('click',e=>{e.preventDefault();clearTimeout(tt);if(++tp>=5){tp=0;location.hash='#/admin'}else location.hash='#/';tt=setTimeout(()=>tp=0,2500)});
+try{if(sessionStorage.getItem('gtA')){sessionStorage.removeItem('gtA');location.hash='#/admin'}}catch(e){}
+addEventListener('hashchange',()=>go());go();
+</script></body></html>
