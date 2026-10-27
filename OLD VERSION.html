@@ -1,0 +1,569 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Golden Trust (formerly Guddu Traders) · Bahraich since 1991</title>
+<script>try{var t=localStorage.getItem('gtT2')||'light';document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme='light'}</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FBF6EC;--blush:#D8BC86;--rose:#8A6742;--sage:#EDE1CB;--sky:#C9B391;--night:#3A2C23;--bg:#FBF6EC;--ink:#3A2C23;--card:#FFFDF8;--mut:#6B5A4C;--gold:#B8955A;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font:400 17px/1.6 'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+body[data-p=home]{background:radial-gradient(ellipse at 68% 42%,#fffaf1,#F4EAD7 58%,#E6D4B3) fixed}
+h1,h2,h3,.f{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.05}
+a{color:inherit}img{max-width:100%}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:none;transition:opacity 0.3s ease;pointer-events:none}
+body[data-p=home] #gl{display:block}
+header{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:calc(12px + env(safe-area-inset-top,0px)) 5vw 12px;background:rgba(251,246,236,.86);backdrop-filter:blur(12px);color:var(--night);border-bottom:1px solid rgba(184,149,90,.4)}
+#logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;line-height:1.15}
+#logo b{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--night);color:var(--blush)}
+#logo small{display:block;font-weight:400;font-size:12px;color:var(--rose)}
+nav{display:flex;gap:clamp(10px,2.4vw,28px);font-size:15px}nav a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}nav a[aria-current]{border-color:var(--blush)}
+.btn{display:inline-block;padding:.85em 1.5em;border-radius:99px;background:var(--blush);color:var(--night);font:700 16px 'DM Sans',sans-serif;text-decoration:none;border:0;cursor:pointer}
+.btn.g{background:none;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}.btn.d{background:var(--night);color:var(--cream)}
+#hero{height:270vh;position:relative;z-index:1}
+.stick{position:sticky;top:0;height:100vh;display:flex;align-items:flex-end;padding:0 5vw 12vh;color:var(--night)}
+.hl{max-width:36rem;padding-top:40px}.hl h1{font-size:clamp(3rem,7.6vw,6.4rem);font-weight:600;margin-bottom:18px;line-height:1.02}.hl p{color:var(--mut);margin-bottom:24px;max-width:28rem}.ra{display:flex;gap:12px;flex-wrap:wrap}
+.hm{position:absolute;left:5vw;right:5vw;bottom:5vh;font-size:clamp(1.5rem,3.4vw,2.6rem);font-weight:600;opacity:0;text-align:center}
+.sec{position:relative;z-index:1;background:var(--bg);padding:clamp(56px,9vw,110px) 5vw}.pg{padding-top:140px;min-height:100vh}
+.sec h2{font-size:clamp(1.9rem,4vw,3rem);margin-bottom:28px;max-width:30rem}
+
+/* Dark Quote Section (.dk & .rvt) */
+.sec.dk{background:var(--night);color:var(--cream);text-align:center;padding:clamp(60px,10vw,120px) 5vw}
+.rvt{font-size:clamp(1.8rem,4.5vw,3.6rem);line-height:1.25;max-width:54rem;margin:0 auto;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic}
+.rvt span{transition:opacity .2s ease;display:inline-block;margin:0 .12em}
+
+/* Three Steps Layout (.steps) */
+.steps{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:34px;margin-top:20px}
+.ln{position:absolute;top:22px;left:0;right:0;height:1px;background:var(--gold);transform-origin:left;z-index:0}
+.steps>div:not(.ln){position:relative;z-index:1}
+.steps b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--bg);border:1.5px solid var(--gold);color:var(--gold);font:600 1.4rem 'Cormorant Garamond',serif;margin-bottom:14px}
+.steps h3{font-size:1.7rem;margin-bottom:6px;color:var(--night)}
+.steps p{color:var(--mut);font-size:15px;line-height:1.5}
+
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:34px}.three h3{font-size:1.4rem;margin-bottom:6px;color:var(--rose)}.three p,.mut{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(235px,100%),1fr));gap:28px;padding-top:12px}
+.card{background:#fff;border-radius:2px;overflow:visible;cursor:pointer;border:1px solid rgba(184,149,90,0.3);padding:12px 12px 16px;position:relative;box-shadow:0 10px 24px rgba(58,44,35,0.12),0 2px 6px rgba(58,44,35,0.08);transition:transform 0.35s cubic-bezier(0.25,1,0.5,1),box-shadow 0.35s ease}
+.card:nth-child(odd){transform:rotate(-1.5deg)}
+.card:nth-child(even){transform:rotate(1.2deg)}
+.card:nth-child(3n){transform:rotate(-0.8deg)}
+.card::before{content:"";position:absolute;top:-12px;left:50%;width:64px;height:20px;margin-left:-32px;background:rgba(216,188,134,0.7);box-shadow:0 1px 3px rgba(0,0,0,0.1);transform:rotate(-2deg);z-index:10;pointer-events:none}
+.card:hover{transform:translateY(-8px) scale(1.02) rotate(0deg) !important;box-shadow:0 18px 36px rgba(58,44,35,0.2),0 4px 10px rgba(58,44,35,0.1);z-index:5}
+.v{aspect-ratio:4/5;display:grid;place-items:center;border-radius:2px;overflow:hidden;margin-bottom:12px}.v img{width:100%;height:100%;object-fit:cover}.cb{padding:4px 6px 2px}.cb h3{font-size:1.25rem;margin:4px 0 6px}.tag{font-size:13px;color:var(--rose);font-weight:700}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}.chip{padding:.5em 1.1em;border-radius:99px;border:1.5px solid var(--ink);background:none;color:var(--ink);font:500 15px 'DM Sans';cursor:pointer}.chip[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.band{background:var(--sage);color:var(--night)}.band .mut{color:#5a4a3c}
+footer{position:relative;z-index:1;background:var(--night);color:var(--sky);padding:34px 5vw calc(34px + env(safe-area-inset-bottom,0px));font-size:15px}
+.ov{position:fixed;inset:0;z-index:60;background:rgba(24,33,42,.65);display:grid;place-items:center;padding:16px}.md{background:var(--bg);color:var(--ink);border-radius:22px;max-width:760px;width:100%;max-height:92vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr}
+.md .v{aspect-ratio:auto;min-height:260px}.mb{padding:26px;display:flex;flex-direction:column;gap:12px}.mb h2{font-size:1.8rem}
+@media(max-width:640px){.md{grid-template-columns:1fr}.md .v{min-height:200px;aspect-ratio:16/10}nav{font-size:13px}#logo small{display:none}.ln{display:none}}
+input,select,textarea{width:100%;padding:.7em .9em;border-radius:12px;border:1.5px solid color-mix(in srgb,var(--ink) 30%,transparent);background:var(--card);color:var(--ink);font:inherit}
+.fl{display:grid;gap:12px;max-width:520px;margin-bottom:36px}.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid color-mix(in srgb,var(--ink) 14%,transparent)}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--night);color:var(--cream);padding:.8em 1.3em;border-radius:99px;z-index:80;display:none}
+.btn{border-radius:2px;letter-spacing:.05em}.chip{border-radius:2px}.md{border-radius:6px}
+.sec h2{font-size:clamp(2.4rem,5.4vw,4rem)}.cb h3{font-size:1.55rem}.three h3{font-size:1.8rem}
+.mq{padding:22px 0;overflow:hidden;border-block:1px solid rgba(184,149,90,.45)}.mt{white-space:nowrap;width:max-content;font-size:clamp(2.2rem,6vw,4.6rem);color:var(--gold);font-style:italic}
+.stats h3{font-size:clamp(2.6rem,6vw,4.6rem);color:var(--gold)}
+.hs{height:auto;display:block;overflow:visible;padding:clamp(56px,9vw,110px) 5vw}.hh{padding:0 0 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}.hr{width:auto;overflow-x:auto;scroll-snap-type:x mandatory;padding:18px 6px 28px;margin:0 -6px;scrollbar-width:none;display:flex;gap:24px}.hr::-webkit-scrollbar{display:none}.hr .card{flex:0 0 min(72vw,300px);scroll-snap-align:start}.hh .chip{font-size:22px;line-height:1;padding:.4em .85em;cursor:pointer}
+.cb h3{font-style:italic}
+.md .v{margin:26px;border:12px solid #fff;border-bottom-width:44px;box-shadow:0 12px 28px rgba(58,44,35,.22);transform:rotate(-2deg)}
+#wb{position:fixed;right:max(18px,3vw);bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:10px;padding:.8em 1.3em;border-radius:2px;background:var(--night);color:var(--cream);text-decoration:none;font:500 15px 'DM Sans',sans-serif;letter-spacing:.05em;border:1px solid var(--gold);box-shadow:0 10px 30px rgba(58,44,35,.28);transition:background .25s,color .25s}#wb svg{color:var(--blush)}#wb:hover{background:var(--gold);color:var(--night)}#wb:hover svg{color:var(--night)}
+footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}
+
+/* mobile cutoff fixes */
+html,body{max-width:100%;overflow-x:hidden}
+main,.sec,.grid,.three,.steps,.chips{min-width:0;max-width:100%}
+.card,.grid>*{min-width:0;max-width:100%}
+.v img,.v svg{max-width:100%}
+header{padding-left:max(4vw,12px);padding-right:max(4vw,12px)}
+#logo{min-width:0;flex:0 1 auto}#logo span{min-width:0}
+nav{flex:0 0 auto}
+@media(max-width:480px){header{gap:8px}#logo b{width:34px;height:34px}#logo{font-size:14px;gap:8px}nav{font-size:12px;gap:9px}}
+
+/* category cards */
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(150px,100%),1fr));gap:16px}
+.ct{aspect-ratio:1/1;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:8px;padding:clamp(14px,2vw,22px);background:var(--t);color:#3A2C23;text-decoration:none;border:1px solid rgba(184,149,90,.45);border-radius:2px;min-width:0;transition:transform .25s ease,box-shadow .25s ease}
+.ct svg{flex:none;width:44%;max-width:76px;height:auto;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;color:#8A6742}
+.ct h3{font-size:clamp(1.3rem,2.6vw,1.8rem);font-style:italic;line-height:1.05;overflow-wrap:anywhere}
+.ct span{display:block;font-size:13px;color:#6B5A4C;margin-top:4px}
+.ct:hover,.ct:focus-visible{transform:translateY(-4px);box-shadow:0 14px 28px rgba(58,44,35,.18)}
+.ct.all{background:var(--night);color:var(--cream);border-color:var(--gold)}.ct.all svg{color:var(--blush)}.ct.all span{color:var(--sky)}
+/* theme toggle */
+#tg{display:grid;place-items:center;align-self:center;flex:none;width:34px;height:34px;padding:0;border-radius:50%;border:1.5px solid var(--gold);background:none;color:var(--ink);cursor:pointer}
+#tg svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#tg .sn{display:none}[data-theme=dark] #tg .sn{display:block}[data-theme=dark] #tg .mn{display:none}
+@media(max-width:480px){#tg{width:30px;height:30px}#tg svg{width:16px;height:16px}}
+/* dark mode */
+:root[data-theme=dark]{color-scheme:dark;--bg:#1A1410;--ink:#F1E6D2;--card:#251C16;--mut:#B9A78F;--rose:#D9B27A;--sage:#2A2019;--sky:#BBA582;--night:#0F0B08;--gold:#D2AE6E}
+[data-theme=dark] body[data-p=home]{background:radial-gradient(ellipse at 68% 42%,#2E221A,#1A1410 58%,#100B08) fixed}
+[data-theme=dark] header{background:rgba(26,20,16,.88);color:var(--ink)}
+[data-theme=dark] #logo b{background:#2A2018;box-shadow:inset 0 0 0 1px var(--gold)}
+[data-theme=dark] .stick,[data-theme=dark] .steps h3,[data-theme=dark] .band{color:var(--ink)}
+[data-theme=dark] .band .mut{color:var(--mut)}
+[data-theme=dark] .btn.d{background:#F1E6D2;color:#1A1410}
+[data-theme=dark] .card{background:#2A2019}
+[data-theme=dark] .md .v{border-color:#E9DCC2}
+[data-theme=dark] #toast{background:#2A2018;border:1px solid var(--gold)}
+[data-theme=dark] .ct{background:#2A2019;color:var(--ink)}
+[data-theme=dark] .ct svg{color:var(--gold)}
+[data-theme=dark] .ct span{color:var(--mut)}
+[data-theme=dark] .ct.all{background:var(--gold);color:#1A1410}
+[data-theme=dark] .ct.all svg,[data-theme=dark] .ct.all span{color:#1A1410}
+
+/* mobile hero: keep headline readable, model sits above it */
+@media(max-width:820px){
+  .stick{height:100vh;height:100svh;padding-bottom:max(11vh,76px)}
+  .hl{position:relative;padding-top:0;max-width:100%}
+  .hl h1{font-size:clamp(2.1rem,9.4vw,3rem);margin-bottom:12px}
+  .hl p{margin-bottom:18px;font-size:16px;line-height:1.5}
+  .hl .ra{flex-wrap:nowrap;gap:10px}
+  .hl .btn{flex:1 1 0;text-align:center;font-size:14px;padding:.85em .5em;letter-spacing:.02em}
+  /* soft frosted backing so text stays legible if anything passes behind it */
+  .hl::before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:-70px -5vw -16px;
+    background:linear-gradient(to bottom,transparent,color-mix(in srgb,var(--bg) 88%,transparent) 26%);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    -webkit-mask-image:linear-gradient(to bottom,transparent,#000 22%,#000 72%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 22%,#000 72%,transparent)}
+  /* make the "Since 1991" line stand out over the model */
+  .since{position:relative}
+  .since b{color:color-mix(in srgb,var(--rose) 72%,var(--ink));text-shadow:0 0 10px var(--bg),0 0 4px var(--bg)}
+  .since span{color:color-mix(in srgb,var(--mut) 55%,var(--ink));text-shadow:0 0 8px var(--bg),0 0 3px var(--bg)}
+}
+@media(max-width:360px){.hl .ra{flex-wrap:wrap}}
+
+/* bouncing scroll hint */
+.sd{position:absolute;left:50%;bottom:calc(12px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0;padding:6px 14px;background:none;border:0;color:inherit;font:500 11px 'DM Sans',sans-serif;letter-spacing:.24em;text-transform:uppercase;cursor:pointer}
+.sd span{opacity:.75;margin-right:-.24em}
+.sd svg{width:28px;height:28px;fill:none;stroke:var(--gold);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;animation:sdb 1.5s ease-in-out infinite}
+@keyframes sdb{0%,100%{transform:translateY(-4px);opacity:.5}50%{transform:translateY(6px);opacity:1}}
+@media(prefers-reduced-motion:reduce){.sd svg{animation:none}}
+/* WhatsApp button appears only once the visitor is halfway down the page */
+#wb{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(18px);transition:opacity .35s ease,transform .35s ease,visibility 0s linear .35s,background .25s,color .25s}
+#wb.show{opacity:1;visibility:visible;pointer-events:auto;transform:none;transition:opacity .35s ease,transform .35s ease,visibility 0s,background .25s,color .25s}
+
+/* highlighted "Since 1991" */
+.since{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin-bottom:14px}
+.since b{font:italic 700 clamp(1.9rem,7.2vw,2.9rem)/1 'Cormorant Garamond',Georgia,serif;color:var(--rose);letter-spacing:.03em;padding-bottom:6px;border-bottom:2px solid var(--gold)}
+.since span{font:500 12px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+
+/* desktop hero: headline sized to the screen so it always fits */
+@media(min-width:821px){
+  .hl{max-width:46rem;padding-top:0}
+  .hl h1{font-size:clamp(2.6rem,min(4.6vw,8.5vh),4.8rem);line-height:1.04}
+  .hl p{font-size:18px;max-width:34rem}
+  .since{margin-bottom:18px;gap:6px 18px}
+  .since b{font-size:clamp(2.4rem,min(4.4vw,8.5vh),4rem);padding-bottom:8px;border-bottom-width:3px}
+  .since span{font-size:14px}
+  .stick{align-items:center;padding-top:calc(88px + env(safe-area-inset-top,0px));padding-bottom:9vh}
+}
+
+/* GT monogram logo, colours match the site's gold palette */
+:root{--l1:#C9A263;--l2:#A47D45;--l3:#7A5732}
+:root[data-theme=dark]{--l1:#F0DBA8;--l2:#D2AE6E;--l3:#A07C48}
+#logo b,[data-theme=dark] #logo b{width:auto;height:auto;border-radius:0;background:none;box-shadow:none;display:block;line-height:0}
+#logo b svg{display:block;height:36px;width:auto;overflow:visible;filter:drop-shadow(0 1px 1px rgba(58,44,35,.25))}
+@media(max-width:480px){#logo b{width:auto;height:auto}#logo b svg{height:30px}}
+
+/* About: fix empty gap + family timeline */
+.pg.ab{min-height:0;padding-bottom:clamp(40px,6vw,72px)}
+.sec.gen{padding-top:0;padding-bottom:0}
+.gen .tag{display:block;margin-bottom:4px}
+@media(max-width:640px){
+.gen-steps{gap:30px}
+.gen-steps>div:not(.ln){padding-left:64px;min-height:44px}
+.gen-steps b{position:absolute;left:0;top:0;margin:0}
+.gen-steps .ln{display:block;left:21px;right:auto;top:22px;bottom:0;width:1px;height:auto;transform-origin:top;background:linear-gradient(var(--gold) 75%,transparent)}
+}
+
+/* admin dashboard */
+:root{--dg:#A8372A}:root[data-theme=dark]{--dg:#E8917F}
+.adm{padding-top:120px}.adm .w{max-width:980px;margin:0 auto}.adm [hidden]{display:none!important}
+.adm h2{font-size:clamp(2rem,4.4vw,2.8rem);margin-bottom:4px}
+.ah{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:22px}.ah .ra{gap:10px}
+.adm .btn,.am .btn{padding:.7em 1.3em;font-size:15px}
+.sts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}
+.sc,.pr,.bx{background:var(--card);border:1px solid color-mix(in srgb,var(--gold) 38%,transparent);border-radius:3px}
+.sc{padding:14px 16px}.sc b{display:block;font:600 2.3rem/1 'Cormorant Garamond',Georgia,serif;color:var(--gold)}.sc span{font-size:14px;color:var(--mut)}
+.tabs{display:flex;gap:4px;padding:4px;margin-bottom:20px;border-radius:4px;background:color-mix(in srgb,var(--ink) 8%,transparent)}
+.tabs button{flex:1;padding:.7em .6em;border:0;border-radius:3px;background:none;color:var(--ink);font:500 15px 'DM Sans',sans-serif;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--ink);color:var(--bg)}
+.tb{display:flex;gap:10px;margin-bottom:14px}.tb input{flex:1}
+.pr{display:grid;grid-template-columns:56px 1fr auto;gap:14px;align-items:center;padding:12px;margin-bottom:10px}
+.pr.k{grid-template-columns:1fr auto}
+.th{width:56px;height:56px;display:grid;place-items:center;border-radius:2px;overflow:hidden}.th img{width:100%;height:100%;object-fit:cover}.th svg{width:62%;height:auto}
+.pt{font-weight:700;line-height:1.3;overflow-wrap:anywhere}.pm{font-size:14px;color:var(--mut)}
+.pa{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.sbtn{padding:.5em 1em;border-radius:2px;border:1.5px solid var(--ink);background:none;color:var(--ink);font:500 14px 'DM Sans',sans-serif;cursor:pointer}.sbtn.dg{border-color:var(--dg);color:var(--dg)}
+.bx{padding:20px;display:grid;gap:14px}.bx.c{max-width:520px}.bx p{margin:0}
+.adm label,.am label{display:grid;gap:6px;font-weight:700;font-size:15px}.adm label small,.am label small{font-weight:400;color:var(--mut);font-size:13px}
+.adm input,.adm select,.adm textarea,.am input,.am select,.am textarea{border-radius:3px}
+.ar,.pw{display:flex;gap:10px}.ar input,.pw input{flex:1}
+.nt{font-size:14px;color:var(--mut)}.lgc{max-width:420px;margin:0 auto}
+.am{background:var(--bg);color:var(--ink);border-radius:6px;max-width:560px;width:100%;max-height:92vh;overflow:auto;padding:24px;display:grid;gap:14px}
+.am .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.am .acts{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+.am .ph{display:flex;gap:12px;align-items:center}.am .ph img{width:72px;height:72px;object-fit:cover;border-radius:3px;flex:none}
+@media(max-width:560px){.pr{grid-template-columns:56px 1fr}.pa{grid-column:1/-1;justify-content:flex-start}.pr.k{grid-template-columns:1fr auto}.pr.k .pa{grid-column:auto}.am .two{grid-template-columns:1fr}.sc b{font-size:1.9rem}.tb{flex-wrap:wrap}.tb .btn{flex:1}}
+/* mobile-only call button: sits above the WhatsApp button and appears with it */
+#cb{display:none}
+@media(max-width:820px){
+#cb{position:fixed;right:max(18px,3vw);bottom:calc(80px + env(safe-area-inset-bottom,0px));z-index:40;display:grid;place-items:center;width:48px;height:48px;border-radius:2px;background:var(--night);color:var(--blush);border:1px solid var(--gold);box-shadow:0 10px 30px rgba(58,44,35,.28);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(18px);transition:opacity .35s ease,transform .35s ease,visibility 0s linear .35s,background .25s,color .25s}
+#wb.show~#cb{opacity:1;visibility:visible;pointer-events:auto;transform:none;transition:opacity .35s ease,transform .35s ease,visibility 0s,background .25s,color .25s}
+#cb:active{background:var(--gold);color:var(--night)}
+#cb svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+footer{padding-bottom:calc(144px + env(safe-area-inset-bottom,0px))}
+}
+/* happy customers: gallery-wall frames */
+.tabs{overflow-x:auto;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}.tabs button{flex:1 0 auto;white-space:nowrap;padding:.7em 1em}
+.rv{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),290px));gap:60px 36px;padding:44px 0 8px}
+.rf{position:relative;text-align:center;transform-origin:50% -26px;transition:transform .6s cubic-bezier(.25,1,.5,1)}
+.rf:nth-child(odd){transform:rotate(-1deg)}.rf:nth-child(even){transform:rotate(.8deg)}.rf:hover{transform:none}
+.rf::before{content:'';position:absolute;top:-30px;left:50%;width:88px;height:34px;margin-left:-44px;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 88 34%22%3E%3Cpath d=%22M8 34L44 4l36 30%22 fill=%22none%22 stroke=%22%23B8955A%22 stroke-width=%221.5%22/%3E%3Ccircle cx=%2244%22 cy=%224%22 r=%223.5%22 fill=%22%238A6742%22/%3E%3C/svg%3E') center/100% 100% no-repeat}
+.rfr{position:relative;padding:12px;background:linear-gradient(135deg,#F3E2B4,#B8955A 36%,#8A6742 62%,#D6B574);box-shadow:0 16px 30px rgba(58,44,35,.3),inset 0 0 0 1px rgba(255,255,255,.4)}
+.rfr::after{content:'';position:absolute;inset:4px;border:1px solid rgba(58,44,35,.4);pointer-events:none}
+.rmt{background:#FBF6EC;padding:14px;box-shadow:inset 0 0 0 1px rgba(138,103,66,.5),inset 0 4px 10px rgba(58,44,35,.2)}
+.rph{aspect-ratio:4/5;display:grid;place-items:center;overflow:hidden;box-shadow:0 0 0 1px rgba(58,44,35,.35)}.rph img{width:100%;height:100%;object-fit:cover}.rph span{font:600 6rem/1 'Cormorant Garamond',Georgia,serif;color:#B8955A;padding-top:.3em}
+.rpl{position:relative;z-index:2;display:inline-block;margin-top:-16px;padding:.4em 1.5em;background:linear-gradient(180deg,#F3E2B4,#C9A263);color:#3A2C23;font:italic 600 1.2rem/1.2 'Cormorant Garamond',Georgia,serif;border-radius:2px;box-shadow:0 4px 10px rgba(58,44,35,.3),inset 0 0 0 1px rgba(58,44,35,.25)}
+.rpl::before,.rpl::after{content:'';position:absolute;top:50%;width:4px;height:4px;margin-top:-2px;border-radius:50%;background:rgba(58,44,35,.45)}.rpl::before{left:7px}.rpl::after{right:7px}
+.rpr{display:block;margin-top:10px;font-size:13px;font-weight:700;color:var(--rose)}
+.rq{margin-top:8px;padding:0 4px;font:italic 500 1.2rem/1.4 'Cormorant Garamond',Georgia,serif;color:var(--ink)}
+@media(max-width:640px){.rv{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:5vw;gap:30px;margin:0 -5vw;padding:44px 5vw 36px;scrollbar-width:none}.rv::-webkit-scrollbar{display:none}.rf{flex:0 0 76%;scroll-snap-align:start}}
+@media(prefers-reduced-motion:reduce){.rf{transition:none}}
+</style></head><body data-p="home">
+<canvas id="gl" aria-hidden="true"></canvas>
+<header><a id="logo" href="#/"><b><svg viewBox="60 170 980 740" role="img" aria-label="Golden Trust logo" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lgG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--l1)"/><stop offset=".5" style="stop-color:var(--l2)"/><stop offset="1" style="stop-color:var(--l3)"/></linearGradient><linearGradient id="lgB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--l2)"/><stop offset=".5" style="stop-color:var(--l1)"/><stop offset="1" style="stop-color:var(--l2)"/></linearGradient><linearGradient id="lgS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--l3)"/><stop offset=".35" style="stop-color:var(--l2)"/><stop offset="1" style="stop-color:var(--l1)"/></linearGradient><linearGradient id="lgT" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4A3524" stop-opacity=".7"/><stop offset="1" stop-color="#4A3524" stop-opacity="0"/></linearGradient><linearGradient id="lgU" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4A3524" stop-opacity="0"/><stop offset="1" stop-color="#3A2C23" stop-opacity=".8"/></linearGradient></defs><path fill="url(#lgG)" d="M790 203 L330 203 C180 203 85 310 85 445 C85 600 190 705 340 705 L580 705 L580 580 L360 580 C290 580 237 525 237 450 C237 380 285 325 360 325 L695 325 Z"/><path fill="url(#lgT)" opacity=".85" d="M330 203 L560 203 L560 325 L360 325 C300 325 262 360 245 400 C250 300 280 230 330 203 Z"/><path fill="url(#lgU)" d="M340 580 L580 580 L580 705 L340 705 C300 705 262 690 230 665 C260 620 300 585 340 580 Z"/><path fill="url(#lgB)" d="M440 378 L1012 378 L920 508 L350 508 Z"/><path fill="url(#lgS)" d="M583 508 L737 508 L737 885 L583 885 Z"/></svg></b><span>Golden Trust<small>Formerly Guddu Traders</small></span></a>
+<nav><a href="#/">Home</a><a href="#/products">Products</a><a href="#/about">About</a><a href="#/contact">Contact</a><button id="tg" type="button" aria-pressed="false" aria-label="Switch to dark mode"><svg class="mn" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg><svg class="sn" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button></nav></header>
+<main id="app"></main>
+<footer>© Golden Trust (formerly Guddu Traders) · Nazirpura, Lucknow Road, Bahraich · <a href="https://wa.me/919792829182" target="_blank" rel="noopener">9792829182</a> · <a href="https://wa.me/919628557982" target="_blank" rel="noopener">9628557982</a> · <span style="white-space:nowrap">GSTIN: 09CDHPS5341A1ZM</span></footer>
+<a id="wb" href="https://wa.me/919792829182?text=Hello%20Golden%20Trust%20(Guddu%20Traders)%2C%20I%20would%20like%20to%20book%20an%20order." target="_blank" rel="noopener" aria-label="Book an order on WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v12H10l-6 4V4Z"/><path d="M8 9h8M8 12h5" stroke-linecap="round"/></svg><span>Book on WhatsApp</span></a>
+<a id="cb" href="tel:+919792829182" aria-label="Call Golden Trust"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+<div id="toast" role="status"></div>
+<script id="gt-data" type="application/json">{"a": {"u": "salman", "p": "golden"}, "p": [{"id": "s1", "name": "Two-Door Iron Almirah", "cat": "Almirah", "price": "", "desc": "Heavy-gauge iron body with two doors, three shelves and a hanging rail. Powder-coated finish.", "img": ""}, {"id": "s2", "name": "Three-Door Wardrobe Almirah", "cat": "Almirah", "price": "", "desc": "Roomy family wardrobe with a full-height hanging section and a lockable top box.", "img": ""}, {"id": "s3", "name": "Locker Almirah", "cat": "Locker", "price": "", "desc": "Almirah with a bolted inner safe compartment for documents, jewellery and cash.", "img": ""}, {"id": "s4", "name": "Office File Cupboard", "cat": "Cupboard", "price": "", "desc": "Sturdy iron cupboard with adjustable shelves for files and records.", "img": ""}, {"id": "s5", "name": "Single-Door Almirah", "cat": "Almirah", "price": "", "desc": "Compact almirah that fits bedrooms, hostels and small shops.", "img": ""}, {"id": "s6", "name": "Kitchen Storage Cabinet", "cat": "Cupboard", "price": "", "desc": "Ventilated iron cabinet for utensils and dry goods.", "img": ""}]}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+const BASE='<!DOCTYPE html>\n'+document.documentElement.outerHTML.replace(/(<html[^>]*?)\s+data-theme="[^"]*"/,'$1');
+const $=s=>document.querySelector(s),WA=['919792829182','919628557982'],RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const E=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
+let D={a:null,p:[]},P=[];try{D=JSON.parse($('#gt-data').textContent);P=D.p||[]}catch(e){}
+let RV=Array.isArray(D.r)?D.r.filter(x=>x&&x.id):[];
+let C=(Array.isArray(D.c)?D.c:[{id:'c-almirah',n:'Almirah'},{id:'c-ironbox',n:'Iron Box'},{id:'c-fridge',n:'Fridge'},{id:'c-cooler',n:'Cooler'},{id:'c-tv',n:'TV'},{id:'c-induction',n:'Induction'},{id:'c-fan',n:'Fan'}]).filter(c=>c&&c.n);
+const HT=document.documentElement,paint=t=>{const b=$('#tg');if(b){b.setAttribute('aria-pressed',t==='dark');b.setAttribute('aria-label',t==='dark'?'Switch to light mode':'Switch to dark mode')}},setTheme=t=>{HT.dataset.theme=t;try{localStorage.setItem('gtT2',t)}catch(e){}paint(t)};paint(HT.dataset.theme||'light');
+let F='All';const TINT=['#EFE3CC','#E8D5B5','#F4EBDD','#E2CFAE'],COL=['#3A2C23','#8A6742','#B8955A','#5E4636'];
+const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(t._t);t._t=setTimeout(()=>t.style.display='none',3600)};
+const art=i=>{const c=COL[i%4];return `<svg viewBox="0 0 120 170" width="62%" aria-hidden="true"><ellipse cx="60" cy="160" rx="46" ry="5" fill="#3A2C23" opacity=".18"/><rect x="14" y="8" width="92" height="136" rx="5" fill="${c}"/><rect x="20" y="14" width="39" height="124" rx="2" fill="none" stroke="#FBF6EC" stroke-opacity=".55"/><rect x="61" y="14" width="39" height="124" rx="2" fill="none" stroke="#FBF6EC" stroke-opacity=".55"/><path d="M55 66v26M65 66v26" stroke="#E8CF9A" stroke-width="3" stroke-linecap="round"/><rect x="22" y="144" width="8" height="8" fill="${c}"/><rect x="90" y="144" width="8" height="8" fill="${c}"/></svg>`};
+const T=p=>E(p.co?p.co+' · '+p.cat:p.cat),vis=(p,i)=>p.img?`<img src="${p.img}" alt="${E(p.name)}">`:art(i);
+const card=(p,i)=>`<article class="card" tabindex="0" data-id="${E(p.id)}" aria-label="${E(p.name)}"><div class="v" style="background:${TINT[i%4]}">${vis(p,i)}</div><div class="cb"><span class="tag">${T(p)}</span><h3>${E(p.name)}</h3><span class="mut">${E(p.price||'Price on request')}</span></div></article>`;
+const ownerCard=(name,role,desc,i)=>`<article class="card" tabindex="0"><div class="v" style="background:${TINT[i%4]}"><svg viewBox="0 0 120 120" width="54%" aria-hidden="true"><circle cx="60" cy="45" r="22" fill="#8A6742" opacity=".25"/><path d="M20 105c0-22 18-38 40-38s40 16 40 38" fill="#8A6742" opacity=".25"/></svg></div><div class="cb"><span class="tag">${role}</span><h3>${name}</h3><span class="mut">${desc}</span></div></article>`;
+const ICO={almirah:'<rect x="14" y="6" width="36" height="46" rx="2"/><path d="M32 6v46M28 28v6M36 28v6M18 52v4M46 52v4"/>',box:'<rect x="8" y="24" width="48" height="30" rx="2"/><path d="M8 34h48M24 24v-5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5"/><rect x="28" y="31" width="8" height="8" rx="1"/>',fridge:'<rect x="16" y="5" width="32" height="54" rx="3"/><path d="M16 23h32M21 12v6M21 30v10"/>',cooler:'<rect x="12" y="5" width="40" height="46" rx="3"/><circle cx="32" cy="20" r="9"/><path d="M32 11v18M23 20h18M18 38h28M18 44h28M20 51v5M44 51v5"/>',tv:'<rect x="6" y="12" width="52" height="34" rx="3"/><path d="M24 54h16M32 46v8"/>',induction:'<rect x="8" y="14" width="48" height="36" rx="3"/><circle cx="24" cy="30" r="8"/><circle cx="43" cy="30" r="5"/><path d="M18 43h28M20 56h24"/>',fan:'<circle cx="32" cy="26" r="20"/><circle cx="32" cy="26" r="3"/><ellipse cx="32" cy="17" rx="4" ry="7"/><ellipse cx="32" cy="17" rx="4" ry="7" transform="rotate(120 32 26)"/><ellipse cx="32" cy="17" rx="4" ry="7" transform="rotate(240 32 26)"/><path d="M32 46v10M22 56h20"/>',tag:'<rect x="10" y="10" width="44" height="44" rx="3"/><path d="M10 26h44M26 26v28"/>',all:'<rect x="8" y="8" width="21" height="21" rx="2"/><rect x="35" y="8" width="21" height="21" rx="2"/><rect x="8" y="35" width="21" height="21" rx="2"/><path d="M35 45h21M47 36l9 9-9 9"/>'};
+const kind=n=>{n=n.toLowerCase();return /almirah|wardrobe|cupboard|locker/.test(n)?'almirah':/box|trunk|peti/.test(n)?'box':/fridge|refrigerator/.test(n)?'fridge':/cooler/.test(n)?'cooler':/\btv\b|television/.test(n)?'tv':/induction|cooktop|stove|chulha/.test(n)?'induction':/\bfans?\b|ceiling|pedestal/.test(n)?'fan':'tag'};
+const ico=n=>`<svg viewBox="0 0 64 64" aria-hidden="true">${ICO[kind(n)]}</svg>`,cnt=n=>P.filter(p=>p.cat===n).length;
+const catSec=()=>`<section class="sec"><h2>Shop by category</h2><div class="cats">${C.map((c,i)=>{const k=cnt(c.n);return `<a class="ct" href="#/products" data-c="${E(c.n)}" style="--t:${TINT[i%4]}">${ico(c.n)}<div><h3>${E(c.n)}</h3><span>${k?k+(k>1?' products':' product'):'Coming soon'}</span></div></a>`}).join('')}<a class="ct all" href="#/products" data-c="All"><svg viewBox="0 0 64 64" aria-hidden="true">${ICO.all}</svg><div><h3>See all products</h3><span>${P.length} in the collection</span></div></a></div></section>`;
+const catOpts=()=>(C.length?C:[{n:'Other'}]).map(c=>`<option>${E(c.n)}</option>`).join('');
+
+const pages={
+home:()=>`<section id="hero"><div class="stick"><div class="hl"><div class="since"><b>Since 1991</b><span>Formerly Guddu Traders</span></div><h1>Everything for your home, under one golden roof.</h1><p>Iron almirahs are our speciality. We also deal in TVs, fridges, coolers, induction cookers, fans and more.</p><div class="ra"><a class="btn" href="#/products">See our products</a><a class="btn g" href="https://wa.me/${WA[0]}" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div><p class="hm f">Open the door to 35 years of trust.</p><button class="sd" type="button" aria-label="Scroll down"><span>Scroll</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5l6 6 6-6"/><path d="M6 12l6 6 6-6"/></svg></button></div></section>
+<div class="sec mq" aria-hidden="true"><div class="mt f">Almirahs ✦ TVs ✦ Fridges ✦ Coolers ✦ Induction ✦ Fans ✦ Since 1991 ✦ Almirahs ✦ TVs ✦ Fridges ✦ Coolers ✦ Induction ✦ Fans ✦ Since 1991 ✦</div></div>${catSec()}<section class="sec"><div class="three stats"><div><h3><span class="cn" data-n="35">35</span> years</h3><p>Serving Bahraich since 1991, first as Guddu Traders.</p></div><div><h3><span class="cn" data-n="${P.length}">${P.length}</span> pieces</h3><p>In the collection today.</p></div><div><h3><span class="cn" data-n="1">1</span> message</h3><p>Is all it takes to place an order.</p></div></div></section><section class="sec" style="padding-top:0"><h2>Products you buy once.</h2><div class="three"><div><h3>Almirahs, our speciality</h3><p>Built from heavy-gauge iron in our own workshop on Lucknow Road, with a powder-coated finish that resists rust and dents.</p></div><div><h3>Everything for the home</h3><p>TVs, fridges, coolers, induction cookers, fans and more, all from one shop you already trust.</p></div><div><h3>Order in one message</h3><p>Pick a product, tap send, and we reply on WhatsApp with price and delivery.</p></div></div></section>
+<section class="sec hs"><div class="hh"><h2>The collection</h2><div class="ra"><button class="chip" data-n="-1" aria-label="Previous products">‹</button><button class="chip" data-n="1" aria-label="Next products">›</button><a class="btn d" href="#/products">View all</a></div></div><div class="hr">${P.slice(0,8).map(card).join('')}</div></section><section class="sec dk"><p class="rvt f">From the almirah that guards a family’s treasures to the TV that brings everyone together, we only sell what we would trust in our own home.</p></section>
+<section class="sec"><h2>Order in three steps.</h2><div class="steps"><div class="ln"></div><div><b>1</b><h3>Pick your product</h3><p>Browse the collection and tap any piece to see it larger.</p></div><div><b>2</b><h3>Send one message</h3><p>WhatsApp opens with the item and quantity already written.</p></div><div><b>3</b><h3>We confirm</h3><p>We reply with price, availability and delivery details.</p></div></div></section>${revSec()}<section class="sec band"><h2>Come see everything in person.</h2><p class="mut" style="margin-bottom:22px;max-width:30rem">Nazirpura, Lucknow Road, Bahraich. Call before you visit and we will keep your pick ready.</p><a class="btn d" href="#/contact">Get directions &amp; phone numbers</a></section>`,
+products:()=>{const cats=['All',...new Set([...C.map(c=>c.n),...P.map(p=>p.cat)])],L=P.filter(p=>F==='All'||p.cat===F);return `<section class="sec pg"><h2>Our products</h2><div class="chips">${cats.map(c=>`<button class="chip" data-f="${E(c)}" aria-pressed="${c===F}">${E(c)}</button>`).join('')}</div>${L.length?`<div class="grid">${L.map(p=>card(p,P.indexOf(p))).join('')}</div>`:'<p class="mut">No products here yet. Check back soon or message us on WhatsApp.</p>'}</section>`},
+about:()=>`<section class="sec pg ab"><h2>Three decades of trust, one promise.</h2><div class="three"><div><h3>Since 1991</h3><p>Golden Trust began in Bahraich in 1991 as Guddu Traders, with one goal: honest products at a fair price.</p></div><div><h3>Built to last</h3><p>Our iron almirahs use heavy-gauge steel and strong joints, so doors stay aligned and locks keep working for years.</p></div><div><h3>Trusted by families &amp; offices</h3><p>From almirahs and lockers to TVs, fridges, coolers and fans, we keep homes and shops running.</p></div></div><p class="mut" style="margin-top:36px"><strong>GSTIN:</strong> 09CDHPS5341A1ZM</p></section>
+<section class="sec gen"><h2>A shop that stayed in the family.</h2><div class="steps gen-steps"><div class="ln"></div><div><b aria-hidden="true">I</b><span class="tag">1991, Bahraich</span><h3>Our grandfather opens Guddu Traders</h3><p>One shop, one rule: sell only what you would be happy to put in your own home, at a fair price.</p></div><div><b aria-hidden="true">II</b><span class="tag">The second generation</span><h3>Our father keeps the word</h3><p>He looked after the shop and its customers, so families and offices always knew where to come back.</p></div><div><b aria-hidden="true">III</b><span class="tag">Today</span><h3>Salman runs Golden Trust</h3><p>The name is new, the promise is not. Same counter, same care, and every product now one message away.</p></div></div></section>
+<section class="sec"><h2>Meet the makers</h2><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),320px));margin-bottom:40px">${ownerCard('Founder & Master Craftsman','Senior Artisan','Guiding the workshop since 1991 with precision steel crafting.',0)}${ownerCard('Salman Ansari','Workshop & Operations Lead','Managing workshop production and customer service.',1)}</div></section>
+<section class="sec dk"><p class="rvt f">We have never chased the cheapest deal. We sell what is still working smoothly many years from now.</p></section>
+<section class="sec"><h2>Visit our workshop</h2><p class="mut" style="margin-bottom:20px">Nazirpura, Lucknow Road, Bahraich.</p><div style="border-radius:6px;overflow:hidden;border:1px solid rgba(184,149,90,0.4)"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.830843155732!2d81.58514957421283!3d27.5677598316364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3999a95b84be8b05%3A0x2f0c8ccff6068501!2sGuddu%20Traders!5e0!3m2!1sen!2sin!4v1792335074266!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></section>`,
+contact:()=>`<section class="sec pg"><h2>Talk to us.</h2><div class="three"><div><h3>Visit</h3><p>Golden Trust<br><span class="mut">(formerly Guddu Traders)</span><br>Nazirpura, Lucknow Road<br>Bahraich</p></div><div><h3>Call</h3><p><a href="tel:+919792829182">9792829182</a><br><a href="tel:+919628557982">9628557982</a></p></div><div><h3>WhatsApp</h3><p style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn d" href="https://wa.me/${WA[0]}" target="_blank" rel="noopener">9792829182</a><a class="btn g" href="https://wa.me/${WA[1]}" target="_blank" rel="noopener">9628557982</a></p></div></div><div style="margin-top:40px"><h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;margin-bottom:16px">Find us on map</h3><div style="border-radius:6px;overflow:hidden;border:1px solid rgba(184,149,90,0.4)"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.830843155732!2d81.58514957421283!3d27.5677598316364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3999a95b84be8b05%3A0x2f0c8ccff6068501!2sGuddu%20Traders!5e0!3m2!1sen!2sin!4v1792335074266!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div></section>`,
+admin:()=>{if(!AU)return `<section class="sec pg adm"><div class="bx lgc"><h2>Owner sign-in</h2><p class="nt">Only the shop owner can change products on the website.</p><label><span>ID</span><input id="lu" autocomplete="username" autocapitalize="none"></label><label><span>Password</span><div class="pw"><input id="lp" type="password" autocomplete="current-password"><button type="button" class="sbtn" id="sw">Show</button></div></label><button class="btn d" id="lg">Sign in</button></div></section>`;
+const nm=P.filter(p=>!p.img).length,tabs=[['products','Products ('+P.length+')'],['cats','Categories ('+C.length+')'],['rev','Reviews ('+RV.length+')'],['acct','Account']];
+const rows=P.map((p,i)=>`<div class="pr" data-s="${E((p.name+' '+p.cat+' '+(p.co||'')).toLowerCase())}"><div class="th" style="background:${TINT[i%4]}">${vis(p,i)}</div><div><div class="pt">${E(p.name)}</div><div class="pm">${T(p)} · ${E(p.price||'Price on request')}</div></div><div class="pa"><button class="sbtn ed" data-id="${E(p.id)}">Edit</button><button class="sbtn dg del" data-id="${E(p.id)}">Delete</button></div></div>`).join('');
+let body;
+if(AT==='cats')body=`<div class="bx"><label><span>New category <small>Appears as a square card on the home page</small></span><div class="ar"><input id="cn" maxlength="30" placeholder="e.g. Washing machine"><button class="btn d" id="cadd">Add</button></div></label></div><div style="margin-top:14px">${C.map(c=>`<div class="pr k"><div><div class="pt">${E(c.n)}</div><div class="pm">${cnt(c.n)} ${cnt(c.n)===1?'product':'products'}</div></div><div class="pa"><button class="sbtn dg delc" data-id="${E(c.id)}">Delete</button></div></div>`).join('')||'<p class="mut">No categories yet. Add your first one above.</p>'}</div><p class="nt">Deleting a category does not delete its products.</p>`;
+else if(AT==='rev')body=revTab();else if(AT==='acct')body=`<div class="bx c"><p class="nt">Signed in as <b>${E(D.a&&D.a.u||'owner')}</b>. Choose a new ID and password to use the next time you sign in.</p><label><span>New ID <small>3+ characters</small></span><input id="nu" autocomplete="username" autocapitalize="none"></label><label><span>New password <small>6+ characters</small></span><input id="np" type="password" autocomplete="new-password"></label><button class="btn d" id="cp">Save new login</button></div>`;
+else body=`<div class="tb"><input id="sq" type="search" placeholder="Search products" aria-label="Search products"><button class="btn d" id="addp">Add product</button></div>${rows||'<div class="bx"><p>No products yet. Add your first product to show it on the website.</p></div>'}<p class="nt" id="nr" hidden>No products match your search.</p>`;
+return `<section class="sec pg adm"><div class="w"><div class="ah"><div><h2>Owner dashboard</h2><p class="mut">Changes go live for every visitor as soon as you publish.</p></div><div class="ra"><a class="btn g" href="#/">View live site</a><button class="btn g" id="out">Sign out</button></div></div><div class="sts"><div class="sc"><b>${P.length}</b><span>Products</span></div><div class="sc"><b>${C.length}</b><span>Categories</span></div><div class="sc"><b>${nm}</b><span>Need a photo</span></div></div><div class="tabs" role="tablist">${tabs.map(t=>`<button role="tab" data-t="${t[0]}" aria-selected="${AT===t[0]}">${t[1]}</button>`).join('')}</div>${body}</div></section>`}
+};
+function doc(l,a,c,r){const j=JSON.stringify({a:a===undefined?D.a:a,p:l,c:c===undefined?C:c,r:r===undefined?RV:r}).replace(/</g,'\\u003c'),aid=BASE.indexOf('id="gt-data"'),s=BASE.indexOf('>',aid)+1,e=BASE.indexOf('<'+'/script>',s);return BASE.slice(0,s)+j+BASE.slice(e)}
+let AU=false;try{AU=sessionStorage.getItem('gtU')==='1'}catch(e){}
+let AT='products',nimg=null,rimg=null;
+const revSec=()=>RV.length?`<section class="sec rvs"><h2>Happy customers</h2><p class="mut" style="max-width:30rem">A few of the families and shops we have served.</p><div class="rv">${RV.map((r,i)=>`<figure class="rf"><div class="rfr"><div class="rmt"><div class="rph" style="background:${TINT[i%4]}">${r.img?`<img src="${r.img}" alt="Photo shared by ${E(r.n)}" loading="lazy">`:'<span aria-hidden="true">“</span>'}</div></div></div><figcaption><span class="rpl">${E(r.n)}</span>${r.p?`<span class="rpr">${E(r.p)}</span>`:''}<blockquote class="rq">“${E(r.t)}”</blockquote></figcaption></figure>`).join('')}</div></section>`:'';
+const revTab=()=>`<div class="tb"><p class="nt" style="flex:1;align-self:center">Shown on the home page as “Happy customers”. The section stays hidden until you add one.</p><button class="btn d" id="addr">Add review</button></div>${RV.map((r,i)=>`<div class="pr"><div class="th" style="background:${TINT[i%4]}">${r.img?`<img src="${r.img}" alt="">`:''}</div><div><div class="pt">${E(r.n)}</div><div class="pm">${E(r.t.length>70?r.t.slice(0,70)+'…':r.t)}</div></div><div class="pa"><button class="sbtn edr" data-id="${E(r.id)}">Edit</button><button class="sbtn dg delr" data-id="${E(r.id)}">Delete</button></div></div>`).join('')||'<div class="bx"><p>No reviews yet. Add a customer photo and a few kind words to build trust.</p></div>'}`;
+function revForm(id){const r=id?RV.find(x=>x.id===id):null;rimg=null;const o=document.createElement('div');o.className='ov';
+o.innerHTML=`<div class="am" role="dialog" aria-modal="true" aria-label="${r?'Edit review':'Add review'}"><h2>${r?'Edit review':'Add a review'}</h2><label><span>Customer name</span><input id="rn" value="${E(r&&r.n)}" maxlength="40" placeholder="e.g. Mrs. Sharma"></label><label><span>What they bought <small>optional</small></span><input id="rp" value="${E(r&&r.p)}" maxlength="50" placeholder="e.g. Three-Door Almirah"></label><label><span>Their words <small>Keep it short, 2 or 3 lines</small></span><textarea id="rt" rows="3" maxlength="180" placeholder="e.g. Solid build, and it was delivered the same day.">${E(r&&r.t)}</textarea></label><label><span>Photo <small>optional, resized automatically</small></span><div class="ph"><img id="rpv" alt="" ${r&&r.img?`src="${r.img}"`:'hidden'}><input id="ri" type="file" accept="image/*"></div></label><div class="acts"><button class="sbtn" id="rx">Cancel</button><button class="btn d" id="rs">${r?'Save changes':'Add review'}</button></div></div>`;
+document.body.append(o);const x=()=>{o.remove();removeEventListener('keydown',k)},k=e=>e.key==='Escape'&&x();addEventListener('keydown',k);
+o.onclick=e=>{if(e.target===o)x()};$('#rx').onclick=x;$('#rn').focus();
+$('#ri').onchange=async()=>{const f=$('#ri').files[0];if(!f)return;rimg=await shrink(f);const v=$('#rpv');v.src=rimg;v.hidden=false};
+$('#rs').onclick=()=>{const n=$('#rn').value.trim(),t=$('#rt').value.trim();if(!n||!t)return toast('Add the customer’s name and their words first.');const v={id:r?r.id:Date.now().toString(36),n,p:$('#rp').value.trim(),t,img:rimg!==null?rimg:(r?r.img:'')};save(P,undefined,undefined,r?RV.map(y=>y.id===r.id?v:y):[v,...RV])}}
+const AL=5*60*1000;
+function lock(){if(!AU)return;AU=false;try{sessionStorage.removeItem('gtU')}catch(e){}document.querySelectorAll('.ov').forEach(o=>o.remove());if(document.body.dataset.p==='admin')go(1);toast('You were signed out because you were away. Sign in again to continue.')}
+function away(){if(AU)try{sessionStorage.setItem('gtH',Date.now())}catch(e){}}
+function back(){let t=0;try{t=+sessionStorage.getItem('gtH')||0;sessionStorage.removeItem('gtH')}catch(e){}if(t&&Date.now()-t>AL)lock()}
+document.addEventListener('visibilitychange',()=>document.hidden?away():back());
+addEventListener('pagehide',away);addEventListener('pageshow',back);back();
+function adm(){const g=q=>document.querySelectorAll(q);
+g('[data-t]').forEach(b=>b.onclick=()=>{AT=b.dataset.t;go(1)});
+g('.ed').forEach(b=>b.onclick=()=>pf(b.dataset.id));
+const l=$('#lg');if(l){l.onclick=()=>{const u=$('#lu').value.trim(),w=$('#lp').value,c=D.a||{u:'salman',p:'golden'};if(u===c.u&&(w===c.p||(c.h&&w==='golden'))){AU=true;try{sessionStorage.setItem('gtU','1')}catch(e){}go(1)}else toast('Wrong ID or password.')};g('#lu,#lp').forEach(i=>i.onkeydown=e=>{if(e.key==='Enter')l.click()})}
+const sw=$('#sw');if(sw)sw.onclick=()=>{const i=$('#lp'),h=i.type==='password';i.type=h?'text':'password';sw.textContent=h?'Hide':'Show'};
+const o=$('#out');if(o)o.onclick=()=>{AU=false;try{sessionStorage.removeItem('gtU')}catch(e){}go(1)};
+const c=$('#cp');if(c)c.onclick=()=>{const u=$('#nu').value.trim(),w=$('#np').value;if(u.length<3||w.length<6)return toast('Use an ID of 3+ and a password of 6+ characters.');save(P,{u,p:w})};
+const a=$('#addp');if(a)a.onclick=()=>pf();
+const ar=$('#addr');if(ar)ar.onclick=()=>revForm();g('.edr').forEach(b=>b.onclick=()=>revForm(b.dataset.id));g('.delr').forEach(b=>b.onclick=()=>{if(b.dataset.s)return save(P,undefined,undefined,RV.filter(r=>r.id!==b.dataset.id));b.dataset.s=1;b.textContent='Tap again to delete';setTimeout(()=>{b.dataset.s='';b.textContent='Delete'},3000)});
+const q=$('#sq');if(q)q.oninput=()=>{const v=q.value.trim().toLowerCase();let n=0;g('.pr').forEach(r=>{const h=r.dataset.s.includes(v);r.hidden=!h;if(h)n++});$('#nr').hidden=n>0}}
+function pf(id){const p=id?P.find(x=>x.id===id):null;nimg=null;const o=document.createElement('div');o.className='ov';
+o.innerHTML=`<div class="am" role="dialog" aria-modal="true" aria-label="${p?'Edit product':'Add product'}"><h2>${p?'Edit product':'Add a product'}</h2><label><span>Product name</span><input id="an" value="${E(p&&p.name)}" placeholder="e.g. Two-Door Iron Almirah"></label><div class="two"><label><span>Category</span><select id="ac">${catOpts()}</select></label><label><span>Brand <small>optional</small></span><input id="aco" value="${E(p&&p.co)}"></label></div><label><span>Price <small>Leave empty to show “Price on request”</small></span><input id="ap" value="${E(p&&p.price)}" placeholder="e.g. ₹14,500"></label><label><span>Description</span><textarea id="ad" rows="3" placeholder="Material, size, finish">${E(p&&p.desc)}</textarea></label><label><span>Photo <small>optional, resized automatically</small></span><div class="ph"><img id="pv" alt="" ${p&&p.img?`src="${p.img}"`:'hidden'}><input id="ai" type="file" accept="image/*"></div></label><div class="acts"><button class="sbtn" id="px">Cancel</button><button class="btn d" id="ps">${p?'Save changes':'Add product'}</button></div></div>`;
+document.body.append(o);const sl=$('#ac');if(p){if(![...sl.options].some(x=>x.value===p.cat))sl.add(new Option(p.cat,p.cat));sl.value=p.cat}
+const x=()=>{o.remove();removeEventListener('keydown',k)},k=e=>e.key==='Escape'&&x();addEventListener('keydown',k);
+o.onclick=e=>{if(e.target===o)x()};$('#px').onclick=x;$('#an').focus();
+$('#ai').onchange=async()=>{const f=$('#ai').files[0];if(!f)return;nimg=await shrink(f);const v=$('#pv');v.src=nimg;v.hidden=false};
+$('#ps').onclick=()=>{const n=$('#an').value.trim();if(!n)return toast('Add a product name first.');const r={id:p?p.id:Date.now().toString(36),name:n,cat:$('#ac').value,co:$('#aco').value.trim(),price:$('#ap').value.trim(),desc:$('#ad').value.trim(),img:nimg!==null?nimg:(p?p.img:'')};save(p?P.map(y=>y.id===p.id?r:y):[r,...P])}}
+async function save(l,au,c,r){let a=null;try{a=window.claude&&await claude.use('artifact')}catch(e){}if(!a)return toast('Open this page from the owner’s account to publish.');try{try{sessionStorage.setItem('gtA','1')}catch(e){}toast('Publishing…');await a.publish(doc(l,au,c,r))}catch(e){toast('Could not publish ('+(e.code||e.message)+'). Sign in as the owner.')}}
+const shrink=f=>new Promise(r=>{const fr=new FileReader();fr.onload=()=>{const i=new Image();i.onload=()=>{const k=Math.min(1,720/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=i.width*k;c.height=i.height*k;c.getContext('2d').drawImage(i,0,0,c.width,c.height);r(c.toDataURL('image/jpeg',.72))};i.src=fr.result};fr.readAsDataURL(f)});
+function openQ(id){const p=P.find(x=>x.id===id);if(!p)return;const i=P.indexOf(p),o=document.createElement('div');o.className='ov';
+o.innerHTML=`<div class="md" role="dialog" aria-modal="true" aria-label="${E(p.name)}"><div class="v" style="background:${TINT[i%4]}">${vis(p,i)}</div><div class="mb"><span class="tag">${T(p)}</span><h2>${E(p.name)}</h2><p class="mut">${E(p.desc)}</p><strong>${E(p.price||'Price on request')}</strong><input id="qn" placeholder="Your name" autocomplete="name"><input id="qq" type="number" min="1" value="1" aria-label="Quantity"><a id="wa" class="btn d" target="_blank" rel="noopener" href="https://wa.me/${WA[0]}">Send order query on WhatsApp</a><button class="chip" id="qx">Close</button></div></div>`;
+document.body.append(o);const x=()=>{o.remove();removeEventListener('keydown',k)},k=e=>e.key==='Escape'&&x();addEventListener('keydown',k);
+$('#qx').onclick=x;o.onclick=e=>{if(e.target===o)x()};$('#qx').focus();if(!RM&&window.gsap)gsap.from('.md',{scale:.88,y:36,opacity:0,duration:.55,ease:'back.out(1.5)'});
+$('#wa').onclick=()=>{const m=`Hello Golden Trust (Guddu Traders),\nI would like to order / enquire about:\n*${p.name}* (${p.cat}${p.co?', '+p.co:''})\nQuantity: ${$('#qq').value||1}\nPrice: ${p.price||'please share'}\nName: ${$('#qn').value||'-'}\nPlease confirm availability, price and delivery.`;$('#wa').href=`https://wa.me/${WA[0]}?text=${encodeURIComponent(m)}`}}
+document.addEventListener('click',e=>{const c=e.target.closest('.card');if(c&&c.dataset.id)return openQ(c.dataset.id);if(e.target.closest('#tg')){setTheme(HT.dataset.theme==='dark'?'light':'dark');return}const lk=e.target.closest('a[href="#/products"]');if(lk){F=lk.dataset.c||'All';if(location.hash==='#/products')go(1)}if(e.target.closest('#cadd')){const v=$('#cn').value.trim();if(!v)return toast('Type a category name first.');if(C.some(c=>c.n.toLowerCase()===v.toLowerCase()))return toast('That category already exists.');return save(P,undefined,[...C,{id:'c'+Date.now().toString(36),n:v}])}const dc=e.target.closest('.delc');if(dc){if(dc.dataset.s)return save(P,undefined,C.filter(c=>c.id!==dc.dataset.id));dc.dataset.s=1;dc.textContent='Tap again to delete';setTimeout(()=>{dc.dataset.s='';dc.textContent='Delete'},3000);return}const f=e.target.closest('.chip[data-f]');if(f){F=f.dataset.f;go(1)}const nb=e.target.closest('[data-n]');if(nb){const hr=$('.hr');if(hr)hr.scrollBy({left:parseInt(nb.dataset.n)*300,behavior:'smooth'});}const d=e.target.closest('.del');if(d){if(d.dataset.s)return save(P.filter(p=>p.id!==d.dataset.id));d.dataset.s=1;d.textContent='Tap again to delete';setTimeout(()=>{d.dataset.s='';d.textContent='Delete'},3000)}});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.classList.contains('card')&&e.target.dataset.id)openQ(e.target.dataset.id)});
+/* 3D */
+const S={r:0,k:0,d:0,z:7.5,x:1,X0:0,mb:1,opacity:1},M={x:0,y:0},m={x:0,y:0};let ren,sc,cam,G,dl,dr,il,pts,MBF=null;
+let BM=null,heroRuns=0,T0=0;
+try{
+ren=new THREE.WebGLRenderer({canvas:$('#gl'),alpha:true,antialias:true});
+ren.setPixelRatio(Math.min(devicePixelRatio,2));
+sc=new THREE.Scene();
+cam=new THREE.PerspectiveCamera(40,1,.1,60);
+G=new THREE.Group();
+sc.add(G);
+
+const KINDS=['almirah','fridge','cooler','tv'],TX=[],serif='"Cormorant Garamond",Georgia,serif',sans='"DM Sans",system-ui,sans-serif',
+FIT={almirah:[1,1],fridge:[1,1],cooler:[1,1],tv:[1.05,.6]};
+let MG=null,upd=null,curKind='almirah';
+
+const mt=(c,m,r)=>new THREE.MeshStandardMaterial({color:c,metalness:m,roughness:r}),
+bx=(w,h,d,mat,x,y,z,par)=>{const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat);o.position.set(x,y,z);par.add(o);return o},
+gg=(cx,x0,y0,x1,y1)=>{const g=cx.createLinearGradient(x0,y0,x1,y1);g.addColorStop(0,'#F7E7B8');g.addColorStop(.5,'#D9B766');g.addColorStop(1,'#9A7442');return g},
+tex=(w,h,draw)=>{const cv=document.createElement('canvas');cv.width=w;cv.height=h;const cx=cv.getContext('2d'),t=new THREE.CanvasTexture(cv);t.anisotropy=4;const f=()=>{cx.clearRect(0,0,w,h);draw(cx,w,h);t.needsUpdate=true};f();TX.push(f);return t},
+spaced=(cx,str,x,y,sz,gap,fill,font)=>{cx.font=`700 ${sz}px ${font||sans}`;cx.textAlign='left';cx.textBaseline='middle';cx.fillStyle=fill;const ch=[...str],ws=ch.map(c=>cx.measureText(c).width),tot=ws.reduce((a,b)=>a+b,0)+gap*(ch.length-1);let p=x-tot/2;ch.forEach((c,i)=>{cx.fillText(c,p,y);p+=ws[i]+gap})},
+badge=(cx,x,y,r)=>{const g=gg(cx,x-r,y-r,x+r,y+r);cx.strokeStyle=g;cx.lineWidth=r*.07;cx.beginPath();cx.arc(x,y,r,0,6.283);cx.stroke();cx.lineWidth=r*.025;cx.beginPath();cx.arc(x,y,r*.87,0,6.283);cx.stroke();cx.font=`700 ${r*1.15}px ${serif}`;cx.textAlign='center';cx.textBaseline='middle';cx.fillStyle=g;cx.fillText('GT',x,y+r*.06)},
+pl=(w,h,t,x,y,z,par,ry)=>{const o=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({map:t,transparent:true}));o.position.set(x,y,z);if(ry)o.rotation.y=ry;par.add(o);return o};
+
+const MODELS={
+/* ---------- ALMIRAH: G on left door, T on right door ---------- */
+almirah(m){
+  const steel=mt(0xC9A96E,.92,.3),shelf=mt(0xF3E9D6,.5,.5),rail=mt(0xE8CF9A,.9,.2),dm=mt(0x5E4636,.6,.35),hm=mt(0xE8CF9A,.95,.15);
+  bx(1.7,2.7,.05,steel,0,0,-.42,m);bx(.05,2.7,.9,steel,-.825,0,0,m);bx(.05,2.7,.9,steel,.825,0,0,m);
+  bx(1.7,.05,.9,steel,0,1.325,0,m);bx(1.7,.05,.9,steel,0,-1.325,0,m);
+  [-.7,.1,.9].forEach(y=>bx(1.6,.04,.85,shelf,0,y,0,m));
+  bx(.04,.04,1.5,rail,0,.65,0,m).rotation.set(0,Math.PI/2,0);
+  const lab=(c,w)=>tex(320,512,(cx,W)=>{cx.font=`700 330px ${serif}`;cx.textAlign='center';cx.textBaseline='middle';cx.fillStyle=gg(cx,0,60,W,380);cx.fillText(c,W/2,215);cx.fillStyle='#E8CF9A';cx.fillRect(W/2-70,372,140,3);spaced(cx,w,W/2,430,50,14,'#E8CF9A')});
+  const door=(s,c,w)=>{const p=new THREE.Group();p.position.set(s*.85,0,.45);bx(.82,2.6,.06,dm,-s*.42,0,0,p);bx(.05,.55,.06,hm,-s*.76,0,.06,p);pl(.72,1.152,lab(c,w),-s*.42,.35,.034,p);m.add(p);return p};
+  const L=door(-1,'G','GOLDEN'),R=door(1,'T','TRUST');
+  return d=>{L.rotation.y=-d;R.rotation.y=d};
+},
+/* ---------- FRIDGE: double door, GT badge + name on the big door ---------- */
+fridge(m){
+  m.position.y=.04;
+  const shell=mt(0xC9A96E,.85,.3),inner=mt(0xF6F0E2,.2,.6),dm=mt(0x4A3A2E,.7,.28),hm=mt(0xE8CF9A,.95,.15),drw=mt(0xE8E0CF,.3,.6);
+  bx(1.5,2.8,.05,shell,0,0,-.42,m);bx(.05,2.8,.9,shell,-.725,0,0,m);bx(.05,2.8,.9,shell,.725,0,0,m);bx(1.5,.05,.9,shell,0,1.375,0,m);bx(1.5,.05,.9,shell,0,-1.375,0,m);
+  bx(1.4,2.7,.02,inner,0,0,-.39,m);bx(.02,2.7,.85,inner,-.69,0,0,m);bx(.02,2.7,.85,inner,.69,0,0,m);
+  bx(1.4,.05,.85,inner,0,.43,0,m);bx(1.4,.04,.8,inner,0,.92,0,m);bx(1.4,.04,.8,inner,0,-.4,0,m);bx(1.4,.04,.8,inner,0,-.95,0,m);
+  bx(1.3,.34,.74,drw,0,-1.2,.03,m);
+  const b1=mt(0x8A6742,.3,.5),b2=mt(0xF3E9D6,.2,.6);
+  [-.45,-.25,-.05,.15].forEach((x,i)=>{const b=new THREE.Mesh(new THREE.CylinderGeometry(.06,.06,.32,12),i%2?b1:b2);b.position.set(x,-.22,.05);m.add(b)});
+  bx(.3,.22,.3,b1,.42,-.27,.05,m);bx(.34,.2,.3,b2,-.4,-.83,.05,m);bx(.4,.18,.3,b2,.3,.01,.05,m);
+  [-.6,.6].forEach(x=>bx(.12,.06,.12,mt(0x3A2C23,.4,.6),x,-1.43,.3,m));
+  const logo=tex(512,640,(cx,W)=>{badge(cx,W/2,230,170);spaced(cx,'GOLDEN TRUST',W/2,500,40,8,gg(cx,60,0,W-60,0),sans);cx.fillStyle='#E8CF9A';cx.fillRect(W/2-60,540,120,3)});
+  const mini=tex(256,256,cx=>badge(cx,128,128,100));
+  const door=(h,yc,hOff,hH,fn)=>{const p=new THREE.Group();p.position.set(-.75,yc,.46);bx(1.5,h,.07,dm,.75,0,0,p);bx(.05,hH,.09,hm,1.38,hOff,.075,p);fn(p);m.add(p);return p};
+  const F=door(.92,.92,-.12,.3,p=>pl(.34,.34,mini,.72,.05,.037,p)),
+        R=door(1.8,-.5,.3,.7,p=>pl(.9,1.125,logo,.72,-.18,.037,p));
+  return d=>{F.rotation.y=-d;R.rotation.y=-d};
+},
+/* ---------- AIR COOLER: louvred front lifts up, fan spins inside ---------- */
+cooler(m){
+  m.position.y=.08;
+  const W=1.3,H=2.4,D=.85,shell=mt(0xC9A96E,.85,.35),dark=mt(0x3A2C23,.5,.5),cream=mt(0xF3E9D6,.5,.45),gold=mt(0xE8CF9A,.9,.2);
+  bx(W,H,.05,shell,0,0,-D/2+.025,m);bx(.05,H,D,shell,-(W/2-.025),0,0,m);bx(.05,H,D,shell,W/2-.025,0,0,m);
+  bx(W+.06,.08,D+.06,gold,0,H/2+.02,0,m);bx(W,.06,D,dark,0,-H/2+.03,0,m);bx(W-.1,.04,D-.1,cream,0,-.5,0,m);bx(W-.1,1.6,.02,cream,0,.35,-D/2+.07,m);
+  for(let i=0;i<12;i++){[-1,1].forEach(s=>{const o=bx(.02,.05,.5,dark,s*(W/2+.005),.75-i*.14,0,m);o.rotation.x=.45})}
+  /* lower tank panel with logo */
+  bx(W-.02,.7,.05,dark,0,-.85,D/2-.02,m);
+  const logo=tex(576,352,(cx)=>{badge(cx,130,176,105);const g=gg(cx,250,0,560,0);spaced(cx,'GOLDEN',410,140,70,8,g,serif);spaced(cx,'TRUST',410,228,70,8,g,serif)});
+  pl(.9,.55,logo,0,-.85,D/2+.008,m);
+  /* fan */
+  const ring=new THREE.Mesh(new THREE.TorusGeometry(.5,.035,12,40),gold);ring.position.set(0,.5,-.05);m.add(ring);
+  const fan=new THREE.Group();fan.position.set(0,.5,-.05);m.add(fan);
+  for(let i=0;i<4;i++){const bp=new THREE.Group();bp.rotation.z=i*Math.PI/2;const bl=bx(.17,.42,.015,gold,0,.3,0,bp);bl.rotation.y=.45;fan.add(bp)}
+  const hub=new THREE.Mesh(new THREE.CylinderGeometry(.1,.1,.08,20),dark);hub.rotation.x=Math.PI/2;fan.add(hub);
+  /* hinged louvre panel (pivot at top) */
+  const pg=new THREE.Group();pg.position.set(0,1.12,D/2+.02);m.add(pg);
+  bx(.06,1.55,.05,gold,-(W/2-.07),-.775,0,pg);bx(.06,1.55,.05,gold,W/2-.07,-.775,0,pg);bx(W-.08,.06,.05,gold,0,-.03,0,pg);bx(W-.08,.06,.05,gold,0,-1.52,0,pg);
+  bx(W-.2,1.4,.01,dark,0,-.775,-.02,pg);
+  for(let i=0;i<13;i++){const o=bx(W-.2,.045,.03,cream,0,-.12-i*.105,0,pg);o.rotation.x=.55}
+  [-.5,.5].forEach(x=>[-.3,.3].forEach(z=>{const w=new THREE.Mesh(new THREE.CylinderGeometry(.09,.09,.06,16),dark);w.rotation.z=Math.PI/2;w.position.set(x,-H/2-.09,z);m.add(w)}));
+  let ph=0,last=0;
+  return(d,t)=>{const dt=Math.min(.05,(t-last)/1000||0);last=t;pg.rotation.x=-d*.75;ph+=dt*d*18;fan.rotation.z=ph}
+},
+/* ---------- TV: switches on as you scroll, screen shows GT + Golden Trust ---------- */
+tv(m){
+  m.position.y=-.08;m.scale.setScalar(1.05);
+  const dark=mt(0x17120F,.7,.3),gold=mt(0xD8BC86,.95,.2);
+  bx(2.76,1.72,.08,gold,0,.35,-.012,m);
+  bx(2.7,1.66,.1,dark,0,.35,0,m);
+  bx(1.7,.9,.2,dark,0,.35,-.15,m);
+  bx(.22,.5,.08,dark,0,-.72,-.05,m);bx(1.2,.05,.55,dark,0,-1,-.02,m);bx(1.2,.012,.5,gold,0,-.97,-.02,m);
+  const scr=tex(1280,720,(cx,w,h)=>{const g=cx.createRadialGradient(w/2,h/2,40,w/2,h/2,w*.6);g.addColorStop(0,'#4A382B');g.addColorStop(1,'#14100C');cx.fillStyle=g;cx.fillRect(0,0,w,h);cx.strokeStyle='rgba(232,207,154,.35)';cx.lineWidth=3;cx.strokeRect(36,36,w-72,h-72);badge(cx,w/2,260,150);spaced(cx,'GOLDEN TRUST',w/2,500,74,26,gg(cx,w*.25,0,w*.75,0),sans);spaced(cx,'SINCE 1991 · BAHRAICH',w/2,592,28,10,'#C9B391',sans)});
+  const sm=new THREE.MeshBasicMaterial({map:scr,color:0x070707});
+  const sc2=new THREE.Mesh(new THREE.PlaneGeometry(2.54,1.43),sm);sc2.position.set(0,.395,.052);m.add(sc2);
+  const chin=tex(1024,128,(cx,w)=>{spaced(cx,'GT  ·  GOLDEN TRUST',w/2,64,52,12,gg(cx,200,0,820,0),sans)});
+  pl(.9,.112,chin,0,-.405,.052,m);
+  const back=tex(256,256,cx=>badge(cx,128,128,100));
+  pl(.5,.5,back,0,.4,-.252,m,Math.PI);
+  return d=>{const b=Math.min(1,d/1);sm.color.setScalar(.03+.97*b)};
+}
+};
+
+BM=(k)=>{
+  if(MG){G.remove(MG);MG.traverse(o=>{if(o.geometry)o.geometry.dispose();if(o.material){if(o.material.map)o.material.map.dispose();o.material.dispose()}});TX.length=0}
+  let last='';try{last=sessionStorage.getItem('gtK')||''}catch(e){}
+  curKind=k||(()=>{const o=KINDS.filter(x=>x!==last);return o[Math.floor(Math.random()*o.length)]})();
+  try{sessionStorage.setItem('gtK',curKind)}catch(e){}
+  MG=new THREE.Group();G.add(MG);
+  upd=MODELS[curKind](MG);
+  window.GT_KIND=curKind;
+  if(typeof rs==='function')rs();
+};
+if(document.fonts&&document.fonts.load)document.fonts.load('700 100px "Cormorant Garamond"').then(()=>document.fonts.load('700 50px "DM Sans"')).then(()=>TX.forEach(f=>f())).catch(()=>{});
+il=new THREE.PointLight(0xFFE2B0,0,5);il.position.set(0,.4,.1);G.add(il);
+sc.add(new THREE.AmbientLight(0xFFF7E6,.55));
+const dir=new THREE.DirectionalLight(0xFFF7E6,1.2);dir.position.set(3,4,5);sc.add(dir);
+const l1=new THREE.PointLight(0xFFD9A0,2.4,14);l1.position.set(-4,1,3);
+const l2=new THREE.PointLight(0xE8CF9A,1.8,14);l2.position.set(4,-2,-2);
+sc.add(l1,l2);
+
+const N=700,pa=new Float32Array(N*3),ca=new Float32Array(N*3),pal=[0xB8955A,0xD8BC86,0x8A6742,0xC9B391].map(c=>new THREE.Color(c));
+for(let i=0;i<N;i++){
+  const r=3.5+Math.random()*7,a=Math.random()*6.283,b=Math.acos(2*Math.random()-1),c=pal[i%4];
+  pa.set([r*Math.sin(b)*Math.cos(a),r*Math.cos(b),r*Math.sin(b)*Math.sin(a)],i*3);
+  ca.set([c.r,c.g,c.b],i*3)
+}
+const g=new THREE.BufferGeometry();
+g.setAttribute('position',new THREE.BufferAttribute(pa,3));
+g.setAttribute('color',new THREE.BufferAttribute(ca,3));
+pts=new THREE.Points(g,new THREE.PointsMaterial({size:.065,vertexColors:true,transparent:true,opacity:.85}));
+sc.add(pts);
+
+const rs=()=>{
+  ren.setSize(innerWidth,innerHeight,false);
+  cam.aspect=innerWidth/innerHeight;
+  cam.updateProjectionMatrix();
+  const w=innerWidth>820;
+  S.X0=w?Math.min(3.2,1.7*cam.aspect):0;
+  if(w){
+    MBF=null;
+    G.position.set(0,0,0);
+    /* desktop only: larger model, eased down on narrower/shorter windows so it never crowds the headline */
+    G.scale.setScalar(.88*FIT[curKind][0]*Math.min(1.5,Math.max(1,1+(cam.aspect-1.4)*.8)));
+    return
+  }
+  /* MOBILE: park the model in the empty space above the headline, then
+     let it grow to the centre while the user scrolls (S.mb 1 -> 0). */
+  const s1=.88*FIT[curKind][1],y1=.5;
+  let s0=s1,y0=y1;
+  try{
+    const hl=document.querySelector('.hl'),hd=document.querySelector('header');
+    G.scale.setScalar(1);G.rotation.set(0,0,0);G.position.set(0,0,0);G.updateMatrixWorld(true);
+    const bb=new THREE.Box3().setFromObject(G),sz=new THREE.Vector3();bb.getSize(sz);
+    if(hl&&sz.y>0){
+      const visH=2*S.z*Math.tan(cam.fov*Math.PI/360),ppu=innerHeight/visH,
+      top=(hd?hd.offsetHeight:64)+24,bot=Math.max(top+150,hl.offsetTop+hl.offsetHeight*.3),avail=bot-top,
+      wU=Math.hypot(sz.x,sz.z)*.85;
+      s0=Math.min(1.15,avail*.9/(sz.y*ppu),innerWidth*.98/(wU*ppu));
+      const cyU=(bb.max.y+bb.min.y)/2,upU=(innerHeight/2-(top+avail/2))/ppu;
+      y0=upU-cyU*s0
+    }
+  }catch(e){}
+  MBF={s0,y0,s1,y1}
+};
+rs();
+addEventListener('resize',rs);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{try{rs()}catch(e){}});
+BM();
+addEventListener('pointermove',e=>{M.x=e.clientX/innerWidth*2-1;M.y=e.clientY/innerHeight*2-1});
+
+(function tick(t){
+  requestAnimationFrame(tick);
+  const gl = $('#gl');
+  if(document.body.dataset.p!=='home'){
+    if(gl) gl.style.opacity = '0';
+    return;
+  }
+  if(gl) gl.style.opacity = S.opacity;
+  m.x+=(M.x-m.x)*.05;
+  m.y+=(M.y-m.y)*.05;
+  G.rotation.y=S.r+(RM?0:(1-S.k)*Math.sin((t-T0)*.0007)*.32)+m.x*.35;
+  G.rotation.x=m.y*.12;
+  G.position.x=S.x*S.X0;
+  if(MBF){G.position.y=MBF.y1+(MBF.y0-MBF.y1)*S.mb;G.scale.setScalar(MBF.s1+(MBF.s0-MBF.s1)*S.mb)}
+  if(upd)upd(S.d,t);
+  il.intensity=S.d*1.6;
+  cam.position.set(m.x*.4,-m.y*.3,S.z);
+  cam.lookAt(0,0,0);
+  pts.rotation.y=t*.00003+S.r*.25;
+  pts.position.set(-m.x*.3,m.y*.3,0);
+  ren.render(sc,cam)
+})(0);
+}catch(err){console.error("3D Error:", err);}
+
+function hero(){
+  if(BM&&heroRuns++>0)BM();
+  ScrollTrigger.getAll().forEach(t=>t.kill());
+  Object.assign(S,{r:0,k:0,d:0,z:7.5,x:1,mb:1,opacity:1});T0=performance.now();
+  
+  gsap.timeline({scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom bottom',scrub:1}})
+    .to(S,{r:6.283,k:1,z:6.3,ease:'none',duration:1},0)
+    .to(S,{x:0,mb:0,ease:'power2.inOut',duration:.5},0)
+    .to(S,{d:1.55,ease:'none',duration:.4},.6)
+    .to('.hl',{autoAlpha:0,y:-60,duration:.2},.1)
+    .to('.sd',{autoAlpha:0,duration:.04},0)
+    .fromTo('.hm',{autoAlpha:0,y:30},{autoAlpha:1,y:0,duration:.2},.78);
+
+  gsap.to(S, {
+    opacity: 0,
+    ease: 'power1.out',
+    scrollTrigger: {
+      trigger: '.mq',
+      start: 'top 70%',
+      end: 'bottom 30%',
+      scrub: true
+    }
+  });
+
+  const sd=$('.sd');if(sd)sd.onclick=()=>scrollBy({top:innerHeight*.9,behavior:RM?'auto':'smooth'});
+  if(!RM)gsap.from('.hl>*',{y:44,opacity:0,duration:1.1,stagger:.14,ease:'power3.out'});
+}
+
+function fx(){if(RM){document.querySelectorAll('.cn').forEach(n=>n.textContent=n.dataset.n);return}
+const st=t=>gsap.from(t,{y:44,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:t,start:'top 88%',once:true}});
+if($('.mt'))gsap.to('.mt',{xPercent:-30,ease:'none',scrollTrigger:{trigger:'.mq',start:'top bottom',end:'bottom top',scrub:1}});
+document.querySelectorAll('.cn').forEach(n=>{const o={v:0};n.textContent=0;gsap.to(o,{v:+n.dataset.n,duration:1.6,ease:'power2.out',scrollTrigger:{trigger:n,start:'top 90%',once:true},onUpdate:()=>n.textContent=Math.round(o.v)})});
+document.querySelectorAll('.stats>div').forEach(st);
+document.querySelectorAll('.rvt').forEach(el=>{el.innerHTML=el.textContent.split(' ').map(w=>`<span>${w}</span>`).join(' ');gsap.fromTo(el.children,{opacity:.2},{opacity:1,stagger:.1,ease:'none',scrollTrigger:{trigger:el,start:'top 82%',end:'bottom 55%',scrub:1}})});
+if($('.ln')){const vm=matchMedia('(max-width:640px)').matches;gsap.fromTo('.ln',{scaleX:vm?1:0,scaleY:vm?0:1},{scaleX:1,scaleY:1,ease:'none',scrollTrigger:{trigger:'.steps',start:'top 78%',end:'bottom 62%',scrub:1}});}
+document.querySelectorAll('.steps>div:not(.ln)').forEach(st)}
+
+function go(keep){const h=location.hash.replace('#/','').split('?')[0]||'home',p=pages[h]?h:'home';document.body.dataset.p=p;$('#app').innerHTML=pages[p]();
+document.querySelectorAll('nav a').forEach(a=>{const n=a.getAttribute('href').replace('#/','')||'home';n===p?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
+document.title='Golden Trust · '+p[0].toUpperCase()+p.slice(1);if(!keep)scrollTo(0,0);
+if(window.ScrollTrigger){gsap.registerPlugin(ScrollTrigger);ScrollTrigger.getAll().forEach(t=>t.kill());if(p==='home')hero();fx()}
+if(p==='admin')adm()}
+let tp=0,tt;$('#logo').addEventListener('click',e=>{e.preventDefault();clearTimeout(tt);if(++tp>=5){tp=0;location.hash='#/admin'}else location.hash='#/';tt=setTimeout(()=>tp=0,2500)});
+try{if(sessionStorage.getItem('gtA')){sessionStorage.removeItem('gtA');location.hash='#/admin'}}catch(e){}
+addEventListener('hashchange',()=>go());go();
+</script><script>
+(function(){var wb=document.getElementById('wb');if(!wb)return;var tk=0;
+function chk(){tk=0;var d=document.documentElement,max=d.scrollHeight-innerHeight,y=window.scrollY||d.scrollTop;wb.classList.toggle('show',max<=40||y>=max*.5)}
+function q(){if(!tk)tk=requestAnimationFrame(chk)}
+addEventListener('scroll',q,{passive:true});addEventListener('resize',q);addEventListener('load',chk);
+addEventListener('hashchange',function(){setTimeout(chk,150);setTimeout(chk,800)});
+var a=document.getElementById('app');if(a&&window.ResizeObserver)new ResizeObserver(q).observe(a);
+chk()})();
+</script>
+</body></html>
