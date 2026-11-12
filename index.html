@@ -390,6 +390,22 @@ html[lang=hi] .cty,html[lang=hi] .ctf{font-style:normal;line-height:1.5}
 @media(hover:hover){.ctc:hover .ctd{color:var(--rose)}.ctw:hover{background:var(--gold);color:#1A1410}}
 @media(min-width:900px){.ctg{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:start}.ctg>div+div .cth{margin-top:0}.ctm iframe{height:500px}.ctp{padding-top:140px}}
 @media(prefers-reduced-motion:reduce){.ctn::after{display:none}}
+
+/* decorative gold shapes behind a few sections: kept to the right edge and the empty top/bottom padding, light parallax via --bgp */
+@supports (overflow:clip) and ((mask-image:none) or (-webkit-mask-image:none)){
+:root{--zL:clamp(120px,16vw,240px);--zS:clamp(22px,3vw,38px)}
+:root{--sh-sp:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23000' fill-opacity='.12' stroke='%23000' stroke-width='3' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M50 4C54 36 64 46 96 50C64 54 54 64 50 96C46 64 36 54 4 50C36 46 46 36 50 4Z'/%3E%3C/svg%3E");--sh-s5:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23000' fill-opacity='.12' stroke='%23000' stroke-width='3' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpolygon points='50.0,4.0 61.2,34.6 93.7,35.8 68.1,55.9 77.0,87.2 50.0,69.0 23.0,87.2 31.9,55.9 6.3,35.8 38.8,34.6'/%3E%3C/svg%3E");--sh-s8:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23000' fill-opacity='.12' stroke='%23000' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpolygon points='50.0,4.0 58.4,29.7 82.5,17.5 70.3,41.6 96.0,50.0 70.3,58.4 82.5,82.5 58.4,70.3 50.0,96.0 41.6,70.3 17.5,82.5 29.7,58.4 4.0,50.0 29.7,41.6 17.5,17.5 41.6,29.7'/%3E%3C/svg%3E");--sh-rg:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23000' fill-opacity='.12' stroke='%23000' stroke-width='4' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='50' cy='50' r='42' fill='none'/%3E%3C/svg%3E");--sh-rs:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23000' fill-opacity='.12' stroke='%23000' stroke-width='1.6' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='50' cy='50' r='45' fill='none'/%3E%3Ccircle cx='50' cy='50' r='31' fill='none'/%3E%3Ccircle cx='50' cy='50' r='17' fill='none'/%3E%3C/svg%3E");--sh-dm:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23000' fill-opacity='.12' stroke='%23000' stroke-width='3.5' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpolygon points='50,6 94,50 50,94 6,50'/%3E%3C/svg%3E");--sh-dt:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23000' fill-opacity='.12' stroke='%23000' stroke-width='4.5' stroke-linejoin='round' stroke-linecap='round'%3E%3Ccircle cx='50' cy='50' r='43' fill='none' stroke-width='4.5' stroke-dasharray='.1 9.6'/%3E%3C/svg%3E");--sh-pl:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23000' fill-opacity='.12' stroke='%23000' stroke-width='5' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M50 10V90M10 50H90' fill='none'/%3E%3C/svg%3E");}
+.sec{--w1:rgba(184,149,90,.40);overflow:clip}
+.sec.dk,:root[data-theme=dark] .sec{--w1:rgba(210,174,110,.30)}
+.sec::before,.sec::after{content:none;position:absolute;inset:0;z-index:-1;pointer-events:none;background:var(--w1)}
+.sec:not(.mq):not(.adm):not(.gen):nth-child(6n+1)::before{content:"";-webkit-mask:var(--sh-s8) calc(100% + 5vw) 22% / var(--zL) var(--zL) no-repeat;mask:var(--sh-s8) calc(100% + 5vw) 22% / var(--zL) var(--zL) no-repeat;transform:translate3d(0,calc(var(--bgp,0)*-22px),0)}
+.sec:not(.mq):not(.adm):not(.gen):nth-child(6n+1)::after{content:"";-webkit-mask:var(--sh-sp) 92% 14px / var(--zS) var(--zS) no-repeat, var(--sh-pl) 5vw calc(100% - 14px) / var(--zS) var(--zS) no-repeat;mask:var(--sh-sp) 92% 14px / var(--zS) var(--zS) no-repeat, var(--sh-pl) 5vw calc(100% - 14px) / var(--zS) var(--zS) no-repeat;transform:translate3d(0,calc(var(--bgp,0)*12px),0)}
+.sec:not(.mq):not(.adm):not(.gen):nth-child(6n+3)::before{content:"";-webkit-mask:var(--sh-rs) calc(100% + 7vw) 30% / var(--zL) var(--zL) no-repeat;mask:var(--sh-rs) calc(100% + 7vw) 30% / var(--zL) var(--zL) no-repeat;transform:translate3d(0,calc(var(--bgp,0)*-22px),0)}
+.sec:not(.mq):not(.adm):not(.gen):nth-child(6n+3)::after{content:"";-webkit-mask:var(--sh-s5) 88% calc(100% - 14px) / var(--zS) var(--zS) no-repeat, var(--sh-dm) 6vw 14px / var(--zS) var(--zS) no-repeat;mask:var(--sh-s5) 88% calc(100% - 14px) / var(--zS) var(--zS) no-repeat, var(--sh-dm) 6vw 14px / var(--zS) var(--zS) no-repeat;transform:translate3d(0,calc(var(--bgp,0)*12px),0)}
+.sec:not(.mq):not(.adm):not(.gen):nth-child(6n+5)::before{content:"";-webkit-mask:var(--sh-dt) calc(100% + 4vw) 18% / var(--zL) var(--zL) no-repeat;mask:var(--sh-dt) calc(100% + 4vw) 18% / var(--zL) var(--zL) no-repeat;transform:translate3d(0,calc(var(--bgp,0)*-22px),0)}
+.sec:not(.mq):not(.adm):not(.gen):nth-child(6n+5)::after{content:"";-webkit-mask:var(--sh-sp) 7vw calc(100% - 14px) / var(--zS) var(--zS) no-repeat, var(--sh-rg) 94% 14px / var(--zS) var(--zS) no-repeat;mask:var(--sh-sp) 7vw calc(100% - 14px) / var(--zS) var(--zS) no-repeat, var(--sh-rg) 94% 14px / var(--zS) var(--zS) no-repeat;transform:translate3d(0,calc(var(--bgp,0)*12px),0)}
+@media(max-width:700px){.sec::before{display:none}}
+}
 </style></head><body data-p="home">
 <!--ld--><div id="ld" role="progressbar" aria-label="Loading" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="lw"><svg viewBox="60 170 980 740" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ldG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--l1)"/><stop offset=".5" style="stop-color:var(--l2)"/><stop offset="1" style="stop-color:var(--l3)"/></linearGradient><linearGradient id="ldB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--l2)"/><stop offset=".5" style="stop-color:var(--l1)"/><stop offset="1" style="stop-color:var(--l2)"/></linearGradient><linearGradient id="ldS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--l3)"/><stop offset=".35" style="stop-color:var(--l2)"/><stop offset="1" style="stop-color:var(--l1)"/></linearGradient><linearGradient id="ldT" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4A3524" stop-opacity=".7"/><stop offset="1" stop-color="#4A3524" stop-opacity="0"/></linearGradient><linearGradient id="ldU" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4A3524" stop-opacity="0"/><stop offset="1" stop-color="#3A2C23" stop-opacity=".8"/></linearGradient></defs><path fill="url(#ldG)" d="M790 203 L330 203 C180 203 85 310 85 445 C85 600 190 705 340 705 L580 705 L580 580 L360 580 C290 580 237 525 237 450 C237 380 285 325 360 325 L695 325 Z"/><path fill="url(#ldT)" opacity=".85" d="M330 203 L560 203 L560 325 L360 325 C300 325 262 360 245 400 C250 300 280 230 330 203 Z"/><path fill="url(#ldU)" d="M340 580 L580 580 L580 705 L340 705 C300 705 262 690 230 665 C260 620 300 585 340 580 Z"/><path fill="url(#ldB)" d="M440 378 L1012 378 L920 508 L350 508 Z"/><path fill="url(#ldS)" d="M583 508 L737 508 L737 885 L583 885 Z"/></svg><div class="nm">Golden Trust</div><div class="br"><i></i></div><div class="tx"></div></div></div><!--/ld-->
 <script>
@@ -898,6 +914,20 @@ async function run(){
   if(!home&&T)for(const k of T.kinds){await new Promise(idle);try{T.warm(k)}catch(e){}}
 }
 run().catch(e=>{console.warn('preload',e);g.done()});
+})();
+</script>
+<script>
+/* light parallax for the decorative shapes behind each .sec */
+(function(){
+if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+var tk=false;
+function upd(){tk=false;var vh=innerHeight,s=document.querySelectorAll('.sec');
+for(var i=0;i<s.length;i++){var r=s[i].getBoundingClientRect();if(r.bottom<-200||r.top>vh+200)continue;
+var p=(r.top+r.height/2-vh/2)/vh;p=Math.max(-1.5,Math.min(1.5,p));s[i].style.setProperty('--bgp',p.toFixed(3))}}
+function req(){if(!tk){tk=true;requestAnimationFrame(upd)}}
+addEventListener('scroll',req,{passive:true,capture:true});addEventListener('resize',req);
+var a=document.getElementById('app');if(a&&window.MutationObserver)new MutationObserver(req).observe(a,{childList:true});
+req();
 })();
 </script>
 </body></html>
